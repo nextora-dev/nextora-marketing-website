@@ -180,7 +180,7 @@ export const features: Feature[] = [
   {
     icon: Home,
     title: 'Student Resources',
-    description: 'Access accommodation listings, transport info, part-time jobs, and essential student services.',
+    description: 'Access accommodation listings, essential student services.',
     color: '#10B981',
     gradient: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
   },
