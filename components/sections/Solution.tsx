@@ -1,0 +1,236 @@
+'use client';
+
+import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Check, Close, ArrowForward } from '@mui/icons-material';
+import { motion } from 'framer-motion';
+import SectionWrapper from '../ui/SectionWrapper';
+import GlassCard from '../ui/GlassCard';
+import GradientText from '../ui/GradientText';
+
+const MotionBox = motion(Box);
+
+const beforeItems = [
+  '10+ different apps for campus needs',
+  'Scattered WhatsApp groups',
+  'Manual timetable checking',
+  'Missing event announcements',
+  'Getting lost in campus',
+  'No centralized lost & found',
+];
+
+const afterItems = [
+  'One unified platform',
+  'Organized notifications',
+  'Real-time schedule updates',
+  'Never miss an event',
+  'AR-powered navigation',
+  'Smart item matching',
+];
+
+export default function Solution() {
+  return (
+    <SectionWrapper id="solution" background="mesh">
+      <Box sx={{ textAlign: 'center', mb: 8 }}>
+        <Typography
+          variant="overline"
+          sx={{
+            color: '#14B8A6',
+            fontWeight: 600,
+            letterSpacing: 2,
+            mb: 2,
+            display: 'block',
+          }}
+        >
+          THE SOLUTION
+        </Typography>
+        <Typography variant="h2" sx={{ mb: 2 }}>
+          Your Campus.{' '}
+          <GradientText variant="h2" component="span">
+            Simplified.
+          </GradientText>
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
+        >
+          One app to replace them all. IIT Connect brings everything you need into a single, beautiful platform.
+        </Typography>
+      </Box>
+
+      <Grid container spacing={4} alignItems="stretch">
+        {/* Before */}
+        <Grid size={{ xs: 12, md: 5 }}>
+          <MotionBox
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <GlassCard
+              hover={false}
+              sx={{
+                height: '100%',
+                borderColor: 'rgba(239, 68, 68, 0.2)',
+                background: 'rgba(239, 68, 68, 0.05)',
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: 2,
+                  background: 'rgba(239, 68, 68, 0.1)',
+                  mb: 3,
+                }}
+              >
+                <Typography variant="caption" sx={{ color: '#EF4444', fontWeight: 600 }}>
+                  BEFORE
+                </Typography>
+              </Box>
+              <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
+                The Old Way
+              </Typography>
+              <Stack spacing={2}>
+                {beforeItems.map((item, index) => (
+                  <MotionBox
+                    key={item}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        background: 'rgba(239, 68, 68, 0.1)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Close sx={{ fontSize: 14, color: '#EF4444' }} />
+                    </Box>
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                      {item}
+                    </Typography>
+                  </MotionBox>
+                ))}
+              </Stack>
+            </GlassCard>
+          </MotionBox>
+        </Grid>
+
+        {/* Arrow */}
+        <Grid size={{ xs: 12, md: 2 }} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <MotionBox
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Box
+              sx={{
+                width: 60,
+                height: 60,
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #7C3AED 0%, #14B8A6 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 10px 40px rgba(124, 58, 237, 0.4)',
+                transform: { xs: 'rotate(90deg)', md: 'rotate(0deg)' },
+                my: { xs: 2, md: 0 },
+              }}
+            >
+              <ArrowForward sx={{ fontSize: 28, color: 'white' }} />
+            </Box>
+          </MotionBox>
+        </Grid>
+
+        {/* After */}
+        <Grid size={{ xs: 12, md: 5 }}>
+          <MotionBox
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <GlassCard
+              hover={false}
+              gradient
+              sx={{
+                height: '100%',
+                borderColor: 'rgba(20, 184, 166, 0.3)',
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: 2,
+                  background: 'rgba(20, 184, 166, 0.2)',
+                  mb: 3,
+                }}
+              >
+                <Typography variant="caption" sx={{ color: '#14B8A6', fontWeight: 600 }}>
+                  AFTER
+                </Typography>
+              </Box>
+              <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
+                With IIT Connect
+              </Typography>
+              <Stack spacing={2}>
+                {afterItems.map((item, index) => (
+                  <MotionBox
+                    key={item}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        background: 'linear-gradient(135deg, #14B8A6 0%, #7C3AED 100%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Check sx={{ fontSize: 14, color: 'white' }} />
+                    </Box>
+                    <Typography variant="body2" sx={{ color: 'text.primary' }}>
+                      {item}
+                    </Typography>
+                  </MotionBox>
+                ))}
+              </Stack>
+            </GlassCard>
+          </MotionBox>
+        </Grid>
+      </Grid>
+    </SectionWrapper>
+  );
+}
