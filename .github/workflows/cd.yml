@@ -7,20 +7,15 @@ on:
       - completed
 
 jobs:
-  deploy:
+  build:
     runs-on: self-hosted
 
     steps:
       - name: Pull Docker image from Docker Hub
         run: sudo docker pull haritha564/nextora:latest
 
-      - name: Stop & remove old container
+      - name: Delete Old docker container
         run: sudo docker rm -f nextora || true
 
-      - name: Run Docker container
-        run: |
-          sudo docker run -d \
-          -p 80:3000 \
-          --restart unless-stopped \
-          --name nextora \
-          haritha564/nextora:latest
+      - name: Run Docker Container
+        run: sudo docker run -d -p 80:3000 --restart unless-stopped --name nextora haritha564/nextora:latest
