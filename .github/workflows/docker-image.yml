@@ -26,8 +26,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t varsubham/cicd-pipeline:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/nextora:latest .
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push haritha564/nextora:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/nextora:latest
