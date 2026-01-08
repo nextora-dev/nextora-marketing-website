@@ -14,7 +14,10 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
 
+# Clean any previous build artifacts and build fresh
+RUN rm -rf .next
 RUN npm run build
 
 # Stage 3: Production runner
@@ -27,12 +30,17 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Copy public folder
 COPY --from=builder /app/public ./public
 
-RUN mkdir .next
+# Create .next directory with correct permissions
+RUN mkdir -p .next
 RUN chown nextjs:nodejs .next
 
+# Copy standalone output
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+
+# Copy static files (this is crucial!)
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
