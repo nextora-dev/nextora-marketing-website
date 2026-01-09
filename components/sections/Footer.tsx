@@ -2,13 +2,10 @@
 
 import { Box, Container, Grid, Typography, Stack, IconButton, Divider } from '@mui/material';
 import { LinkedIn, Instagram, Email } from '@mui/icons-material';
-import { motion } from 'framer-motion';
 import { footerLinks } from '@/data/content';
 import Image from "next/image";
 import { alpha } from '@mui/material/styles';
 import { colors } from '@/theme/colors';
-
-const MotionBox = motion.create(Box);
 
 const socialLinks = [
   { icon: LinkedIn, href: '#', label: 'LinkedIn' },
@@ -32,12 +29,7 @@ export default function Footer() {
         <Grid container spacing={4}>
           {/* Brand Column */}
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <Box>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 3 }}>
                   <Box
                       sx={{
@@ -51,7 +43,7 @@ export default function Footer() {
                   >
                       <Image
                           src="/sdgp_logo.png"
-                          alt="Icon"
+                          alt="NextOra Logo"
                           width={0}
                           height={0}
                           sizes="(max-width: 600px) 100px, (max-width: 900px) 120px, 150px"
@@ -91,18 +83,13 @@ export default function Footer() {
                   </IconButton>
                 ))}
               </Stack>
-            </MotionBox>
+            </Box>
           </Grid>
 
           {/* Product Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
+            <Box component="nav" aria-label="Product links">
+              <Typography variant="subtitle2" component="h3" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
                 Product
               </Typography>
               <Stack spacing={2}>
@@ -125,18 +112,13 @@ export default function Footer() {
                   </Typography>
                 ))}
               </Stack>
-            </MotionBox>
+            </Box>
           </Grid>
 
           {/* Company Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
+            <Box component="nav" aria-label="Company links">
+              <Typography variant="subtitle2" component="h3" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
                 Company
               </Typography>
               <Stack spacing={2}>
@@ -159,18 +141,13 @@ export default function Footer() {
                   </Typography>
                 ))}
               </Stack>
-            </MotionBox>
+            </Box>
           </Grid>
 
           {/* Resources Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
+            <Box component="nav" aria-label="Resources links">
+              <Typography variant="subtitle2" component="h3" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
                 Resources
               </Typography>
               <Stack spacing={2}>
@@ -193,18 +170,13 @@ export default function Footer() {
                   </Typography>
                 ))}
               </Stack>
-            </MotionBox>
+            </Box>
           </Grid>
 
           {/* Legal Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
+            <Box component="nav" aria-label="Legal links">
+              <Typography variant="subtitle2" component="h3" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
                 Legal
               </Typography>
               <Stack spacing={2}>
@@ -227,7 +199,7 @@ export default function Footer() {
                   </Typography>
                 ))}
               </Stack>
-            </MotionBox>
+            </Box>
           </Grid>
         </Grid>
 

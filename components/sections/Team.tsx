@@ -40,6 +40,7 @@ export default function Team() {
         </Typography>
         <Typography
           variant="h6"
+          component="p"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 700, mx: 'auto', mb: 4 }}
         >
           We&apos;re a team of IIT undergraduates from the SE-03 group who understand the challenges
@@ -60,6 +61,7 @@ export default function Team() {
         >
           <Typography
             variant="h6"
+            component="blockquote"
             sx={{
               fontStyle: 'italic',
               fontWeight: 400,

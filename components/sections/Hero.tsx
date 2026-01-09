@@ -3,12 +3,10 @@
 import { useState, useEffect } from 'react';
 import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
 import { PlayArrow, Rocket } from '@mui/icons-material';
-import { motion } from 'framer-motion';
 import GradientText from '../ui/GradientText';
 import { alpha } from '@mui/material/styles';
 import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion.create(Box);
 
 // Reduced number of background elements for better performance
 const backgroundElements = Array.from({ length: 8 }, (_, i) => ({
@@ -202,16 +200,18 @@ export default function Hero() {
 
           {/* Phone Mockup with Floating Cards */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <MotionBox
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+            <Box
               sx={{
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 minHeight: { xs: 400, md: 550 },
+                animation: 'fadeInScale 0.8s ease-out forwards',
+                '@keyframes fadeInScale': {
+                  '0%': { opacity: 0, transform: 'scale(0.95)' },
+                  '100%': { opacity: 1, transform: 'scale(1)' },
+                },
               }}
             >
                 {/* Realistic Phone Mockup */}
@@ -394,21 +394,23 @@ export default function Hero() {
                   pointerEvents: 'none',
                 }}
               />
-            </MotionBox>
+            </Box>
           </Grid>
         </Grid>
       </Container>
 
-      {/* Scroll Indicator */}
-      <MotionBox
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
+      {/* Scroll Indicator - Use CSS animation for better performance */}
+      <Box
         sx={{
           position: 'absolute',
           bottom: 40,
           left: '50%',
           transform: 'translateX(-50%)',
+          animation: 'bounce 1.5s ease-in-out infinite',
+          '@keyframes bounce': {
+            '0%, 100%': { transform: 'translateX(-50%) translateY(0)' },
+            '50%': { transform: 'translateX(-50%) translateY(10px)' },
+          },
           display: { xs: 'none', md: 'flex' },
           flexDirection: 'column',
           alignItems: 'center',
@@ -438,7 +440,7 @@ export default function Hero() {
             }}
           />
         </Box>
-      </MotionBox>
+      </Box>
     </Box>
   );
 }
