@@ -97,6 +97,7 @@ export default function Features() {
                 </Box>
                 <Typography
                   variant="h6"
+                  component="h3"
                   className="feature-title"
                   sx={{
                     mb: 1.5,

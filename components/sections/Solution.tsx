@@ -33,9 +33,10 @@ export default function Solution() {
 
   return (
     <SectionWrapper id="solution" background="mesh">
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
+          component="span"
           sx={{
             color: colors.indigo.main,
             fontWeight: 600,
@@ -46,7 +47,7 @@ export default function Solution() {
         >
           THE SOLUTION
         </Typography>
-        <Typography variant="h2" sx={{ mb: 2 }}>
+        <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Your Campus.{' '}
           <GradientText variant="h2" component="span">
             Simplified.
@@ -54,6 +55,7 @@ export default function Solution() {
         </Typography>
         <Typography
           variant="h6"
+          component="p"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
         >
           One app to replace them all. NextOra brings everything you need into a single, beautiful platform.
@@ -93,7 +95,7 @@ export default function Solution() {
                   BEFORE
                 </Typography>
               </Box>
-              <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
+              <Typography variant="h5" component="h3" sx={{ mb: 3, fontWeight: 600 }}>
                 The Old Way
               </Typography>
               <Stack spacing={2}>
@@ -193,7 +195,7 @@ export default function Solution() {
                   AFTER
                 </Typography>
               </Box>
-              <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
+              <Typography variant="h5" component="h3" sx={{ mb: 3, fontWeight: 600 }}>
                 With NextOra
               </Typography>
               <Stack spacing={2}>

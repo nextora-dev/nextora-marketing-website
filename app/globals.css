@@ -72,11 +72,30 @@
 
 /* Light theme only - no dark mode */
 
+/* Critical CSS - Optimize for LCP */
+@layer critical {
+  /* Ensure hero section renders immediately */
+  h1 {
+    font-display: swap;
+  }
+
+  /* Prevent layout shift */
+  section:first-of-type {
+    contain: layout style;
+  }
+}
+
 /* Base styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Content visibility for below-the-fold sections */
+section:not(:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 /* Smooth scrolling */

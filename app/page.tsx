@@ -1,19 +1,44 @@
 'use client';
 
 import { Box } from '@mui/material';
+import dynamic from 'next/dynamic';
+import { colors } from '@/theme/colors';
+
+// Critical above-the-fold components - load immediately
 import Navbar from '@/components/sections/Navbar';
 import Hero from '@/components/sections/Hero';
-import Problem from '@/components/sections/Problem';
-import Solution from '@/components/sections/Solution';
-import Features from '@/components/sections/Features';
-import HowItWorks from '@/components/sections/HowItWorks';
-import Benefits from '@/components/sections/Benefits';
-import Roadmap from '@/components/sections/Roadmap';
-import Team from '@/components/sections/Team';
-import FAQ from '@/components/sections/FAQ';
-import FinalCTA from '@/components/sections/FinalCTA';
-import Footer from '@/components/sections/Footer';
-import { colors } from '@/theme/colors';
+
+// Below-the-fold components - lazy load for better performance
+const Problem = dynamic(() => import('@/components/sections/Problem'), {
+    loading: () => null,
+});
+const Solution = dynamic(() => import('@/components/sections/Solution'), {
+    loading: () => null,
+});
+const Features = dynamic(() => import('@/components/sections/Features'), {
+    loading: () => null,
+});
+const HowItWorks = dynamic(() => import('@/components/sections/HowItWorks'), {
+    loading: () => null,
+});
+const Benefits = dynamic(() => import('@/components/sections/Benefits'), {
+    loading: () => null,
+});
+const Roadmap = dynamic(() => import('@/components/sections/Roadmap'), {
+    loading: () => null,
+});
+const Team = dynamic(() => import('@/components/sections/Team'), {
+    loading: () => null,
+});
+const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
+    loading: () => null,
+});
+const FinalCTA = dynamic(() => import('@/components/sections/FinalCTA'), {
+    loading: () => null,
+});
+const Footer = dynamic(() => import('@/components/sections/Footer'), {
+    loading: () => null,
+});
 
 export default function Home() {
     return (

@@ -16,9 +16,10 @@ export default function Benefits() {
 
   return (
     <SectionWrapper id="benefits" background="default">
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
+          component="span"
           sx={{
             color: colors.primary.main,
             fontWeight: 600,
@@ -29,7 +30,7 @@ export default function Benefits() {
         >
           WHY CHOOSE US
         </Typography>
-        <Typography variant="h2" sx={{ mb: 2 }}>
+        <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Built for{' '}
           <GradientText variant="h2" component="span">
             Students
@@ -37,6 +38,7 @@ export default function Benefits() {
         </Typography>
         <Typography
           variant="h6"
+          component="p"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
         >
           More than just an app — it&apos;s a complete ecosystem designed to make your campus life seamless.
@@ -88,7 +90,7 @@ export default function Benefits() {
                     <benefit.icon sx={{ fontSize: 28, color }} />
                   </Box>
                   <Box>
-                    <Typography variant="h6" sx={{ mb: 1, fontWeight: 600 }}>
+                    <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                       {benefit.title}
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>

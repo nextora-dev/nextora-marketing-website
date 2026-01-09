@@ -10,15 +10,15 @@ import { colors, gradients } from '@/theme/colors';
 
 const MotionBox = motion.create(Box);
 
-// Pre-generate deterministic values for background elements
-const backgroundElements = Array.from({ length: 20 }, (_, i) => ({
+// Reduced number of background elements for better performance
+const backgroundElements = Array.from({ length: 8 }, (_, i) => ({
     id: i,
-    duration: (i * 0.15 + 2) % 3 + 2,
-    delay: (i * 0.1) % 2,
-    width: ((i * 17) % 300) + 100,
-    height: ((i * 23) % 300) + 100,
-    left: ((i * 5) % 100),
-    top: ((i * 7) % 100),
+    duration: (i * 0.15 + 3) % 4 + 3,
+    delay: (i * 0.2) % 2,
+    width: ((i * 17) % 200) + 150,
+    height: ((i * 23) % 200) + 150,
+    left: ((i * 12) % 100),
+    top: ((i * 14) % 100),
     colorIndex: i % 3,
 }));
 
@@ -26,7 +26,9 @@ export default function Hero() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        queueMicrotask(() => setMounted(true));
+        // Delay background animations to prioritize LCP
+        const timer = setTimeout(() => setMounted(true), 100);
+        return () => clearTimeout(timer);
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -37,9 +39,9 @@ export default function Hero() {
     };
 
     const themeColors = [
-        alpha(colors.indigo.main, 0.12),
-        alpha(colors.primary.main, 0.1),
-        alpha(colors.indigo.accent, 0.1),
+        alpha(colors.indigo.main, 0.08),
+        alpha(colors.primary.main, 0.06),
+        alpha(colors.indigo.accent, 0.06),
     ];
 
     return (
@@ -56,7 +58,7 @@ export default function Hero() {
                 background: gradients.heroMesh,
             }}
         >
-            {/* Animated Background Elements - only render after mount to avoid hydration mismatch */}
+            {/* Animated Background Elements - deferred to prioritize LCP */}
             {mounted && (
                 <Box
                     sx={{
@@ -67,18 +69,8 @@ export default function Hero() {
                     }}
                 >
                     {backgroundElements.map((el) => (
-                        <MotionBox
+                        <Box
                             key={el.id}
-                            initial={{ opacity: 0 }}
-                            animate={{
-                                opacity: [0.1, 0.3, 0.1],
-                                scale: [1, 1.2, 1],
-                            }}
-                            transition={{
-                                duration: el.duration,
-                                repeat: Infinity,
-                                delay: el.delay,
-                            }}
                             sx={{
                                 position: 'absolute',
                                 width: el.width,
@@ -88,6 +80,13 @@ export default function Hero() {
                                 left: `${el.left}%`,
                                 top: `${el.top}%`,
                                 transform: 'translate(-50%, -50%)',
+                                opacity: 0.5,
+                                animation: `pulse-bg ${el.duration}s ease-in-out infinite`,
+                                animationDelay: `${el.delay}s`,
+                                '@keyframes pulse-bg': {
+                                    '0%, 100%': { opacity: 0.3, transform: 'translate(-50%, -50%) scale(1)' },
+                                    '50%': { opacity: 0.5, transform: 'translate(-50%, -50%) scale(1.1)' },
+                                },
                             }}
                         />
                     ))}
@@ -98,11 +97,8 @@ export default function Hero() {
             <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Grid container spacing={6} alignItems="center">
           <Grid size={{ xs: 12, md: 6 }}>
-            <MotionBox
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            {/* Remove initial animation delay for LCP element */}
+            <Box>
               <Box
                 sx={{
                   display: 'inline-flex',
@@ -134,7 +130,7 @@ export default function Hero() {
                 </Typography>
               </Box>
 
-              {/* SEO-optimized H1 - Main keyword: NextOra Campus Platform */}
+              {/* SEO-optimized H1 - Main keyword: NextOra Campus Platform - NO ANIMATION DELAY */}
               <Typography
                 variant="h1"
                 component="h1"
@@ -201,7 +197,7 @@ export default function Hero() {
                   Watch Demo
                 </Button>
               </Stack>
-            </MotionBox>
+            </Box>
           </Grid>
 
           {/* Phone Mockup with Floating Cards */}

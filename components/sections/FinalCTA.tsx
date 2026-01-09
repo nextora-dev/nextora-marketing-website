@@ -26,7 +26,7 @@ export default function FinalCTA() {
 
   return (
     <SectionWrapper id="cta" background="mesh" paddingY={16}>
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <MotionBox
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,6 +35,7 @@ export default function FinalCTA() {
         >
           <Typography
             variant="overline"
+            component="span"
             sx={{
               color: colors.indigo.main,
               fontWeight: 600,
@@ -45,7 +46,7 @@ export default function FinalCTA() {
           >
             GET STARTED
           </Typography>
-          <Typography variant="h2" sx={{ mb: 3 }}>
+          <Typography variant="h2" component="h2" sx={{ mb: 3 }}>
             Ready to Transform Your{' '}
             <GradientText variant="h2" component="span">
               Campus Experience?
@@ -53,6 +54,7 @@ export default function FinalCTA() {
           </Typography>
           <Typography
             variant="h6"
+            component="p"
             sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
           >
             Join thousands of IIT students who are already enjoying a smarter campus life.
@@ -76,7 +78,7 @@ export default function FinalCTA() {
               hover={false}
               sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             >
-              <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
+              <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 2 }}>
                 Get Early Access
               </Typography>
               <Typography variant="body1" sx={{ color: 'text.secondary', mb: 4 }}>
@@ -109,7 +111,7 @@ export default function FinalCTA() {
                   >
                     <Typography variant="h4">🎉</Typography>
                   </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                  <Typography variant="h6" component="h4" sx={{ fontWeight: 600, mb: 1 }}>
                     You&apos;re on the list!
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>

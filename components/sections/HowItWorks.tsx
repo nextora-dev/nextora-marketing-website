@@ -15,9 +15,10 @@ export default function HowItWorks() {
 
   return (
     <SectionWrapper id="how-it-works" background="gradient">
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
+          component="span"
           sx={{
             color: colors.indigo.main,
             fontWeight: 600,
@@ -28,7 +29,7 @@ export default function HowItWorks() {
         >
           HOW IT WORKS
         </Typography>
-        <Typography variant="h2" sx={{ mb: 2 }}>
+        <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Get Started in{' '}
           <GradientText variant="h2" component="span">
             Minutes
@@ -36,6 +37,7 @@ export default function HowItWorks() {
         </Typography>
         <Typography
           variant="h6"
+          component="p"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
         >
           No complicated setup. Just sign in with your IIT credentials and you&apos;re ready to go.
@@ -124,7 +126,7 @@ export default function HowItWorks() {
                   >
                     <item.icon sx={{ fontSize: 32, color: colors.primary.main }} />
                   </Box>
-                  <Typography variant="h6" sx={{ mb: 1.5, fontWeight: 600 }}>
+                  <Typography variant="h6" component="h3" sx={{ mb: 1.5, fontWeight: 600 }}>
                     {item.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>

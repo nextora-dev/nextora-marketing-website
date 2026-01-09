@@ -36,9 +36,10 @@ export default function Roadmap() {
 
   return (
     <SectionWrapper id="roadmap" background="gradient">
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
+          component="span"
           sx={{
             color: colors.sky.main,
             fontWeight: 600,
@@ -49,7 +50,7 @@ export default function Roadmap() {
         >
           ROADMAP
         </Typography>
-        <Typography variant="h2" sx={{ mb: 2 }}>
+        <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           What&apos;s{' '}
           <GradientText
             variant="h2"
@@ -61,6 +62,7 @@ export default function Roadmap() {
         </Typography>
         <Typography
           variant="h6"
+          component="p"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
         >
           We&apos;re constantly building new features to make your campus experience even better.
@@ -115,7 +117,7 @@ export default function Roadmap() {
                   >
                     <item.icon sx={{ fontSize: 28, color: status.color }} />
                   </Box>
-                  <Typography variant="h6" sx={{ mb: 1.5, fontWeight: 600 }}>
+                  <Typography variant="h6" component="h3" sx={{ mb: 1.5, fontWeight: 600 }}>
                     {item.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
