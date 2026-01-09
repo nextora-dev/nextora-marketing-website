@@ -3,11 +3,13 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import { Check, Close, ArrowForward } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
+import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const beforeItems = [
   '10+ different apps for campus needs',
@@ -28,13 +30,14 @@ const afterItems = [
 ];
 
 export default function Solution() {
+
   return (
     <SectionWrapper id="solution" background="mesh">
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
           sx={{
-            color: '#14B8A6',
+            color: colors.indigo.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -53,7 +56,7 @@ export default function Solution() {
           variant="h6"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
         >
-          One app to replace them all. IIT Connect brings everything you need into a single, beautiful platform.
+          One app to replace them all. NextOra brings everything you need into a single, beautiful platform.
         </Typography>
       </Box>
 
@@ -70,8 +73,8 @@ export default function Solution() {
               hover={false}
               sx={{
                 height: '100%',
-                borderColor: 'rgba(239, 68, 68, 0.2)',
-                background: 'rgba(239, 68, 68, 0.05)',
+                borderColor: alpha(colors.error.main, 0.2),
+                background: alpha(colors.error.main, 0.05),
               }}
             >
               <Box
@@ -82,11 +85,11 @@ export default function Solution() {
                   px: 2,
                   py: 0.5,
                   borderRadius: 2,
-                  background: 'rgba(239, 68, 68, 0.1)',
+                  background: alpha(colors.error.main, 0.1),
                   mb: 3,
                 }}
               >
-                <Typography variant="caption" sx={{ color: '#EF4444', fontWeight: 600 }}>
+                <Typography variant="caption" sx={{ color: colors.error.main, fontWeight: 600 }}>
                   BEFORE
                 </Typography>
               </Box>
@@ -112,14 +115,14 @@ export default function Solution() {
                         width: 24,
                         height: 24,
                         borderRadius: '50%',
-                        background: 'rgba(239, 68, 68, 0.1)',
+                        background: alpha(colors.error.main, 0.1),
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0,
                       }}
                     >
-                      <Close sx={{ fontSize: 14, color: '#EF4444' }} />
+                      <Close sx={{ fontSize: 14, color: colors.error.main }} />
                     </Box>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                       {item}
@@ -144,11 +147,11 @@ export default function Solution() {
                 width: 60,
                 height: 60,
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #7C3AED 0%, #14B8A6 100%)',
+                background: gradients.blueIndigo,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 10px 40px rgba(124, 58, 237, 0.4)',
+                boxShadow: `0 10px 40px ${alpha(colors.primary.main, 0.35)}`,
                 transform: { xs: 'rotate(90deg)', md: 'rotate(0deg)' },
                 my: { xs: 2, md: 0 },
               }}
@@ -171,7 +174,7 @@ export default function Solution() {
               gradient
               sx={{
                 height: '100%',
-                borderColor: 'rgba(20, 184, 166, 0.3)',
+                borderColor: alpha(colors.indigo.main, 0.2),
               }}
             >
               <Box
@@ -182,16 +185,16 @@ export default function Solution() {
                   px: 2,
                   py: 0.5,
                   borderRadius: 2,
-                  background: 'rgba(20, 184, 166, 0.2)',
+                  background: alpha(colors.indigo.main, 0.15),
                   mb: 3,
                 }}
               >
-                <Typography variant="caption" sx={{ color: '#14B8A6', fontWeight: 600 }}>
+                <Typography variant="caption" sx={{ color: colors.indigo.main, fontWeight: 600 }}>
                   AFTER
                 </Typography>
               </Box>
               <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
-                With IIT Connect
+                With NextOra
               </Typography>
               <Stack spacing={2}>
                 {afterItems.map((item, index) => (
@@ -212,7 +215,7 @@ export default function Solution() {
                         width: 24,
                         height: 24,
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, #14B8A6 0%, #7C3AED 100%)',
+                        background: gradients.blueIndigo,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',

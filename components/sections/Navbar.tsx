@@ -14,21 +14,24 @@ import {
   ListItemText,
   Toolbar,
   useScrollTrigger,
+  useTheme,
 } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
-import GradientText from '../ui/GradientText';
+import Image from 'next/image';
+import { alpha } from '@mui/material/styles';
+import { colors } from '@/theme/colors';
 
 const navItems = [
   { label: 'Features', href: '#features' },
   { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const theme = useTheme();
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -36,7 +39,8 @@ export default function Navbar() {
   });
 
   useEffect(() => {
-    setMounted(true);
+    // Use queueMicrotask to avoid synchronous setState warning
+    queueMicrotask(() => setMounted(true));
   }, []);
 
   const handleDrawerToggle = () => {
@@ -64,18 +68,21 @@ export default function Navbar() {
         elevation={0}
         sx={{
           background: trigger
-            ? 'rgba(10, 14, 26, 0.85)'
+            ? alpha(theme.palette.background.paper, 0.92)
             : 'transparent',
-          backdropFilter: trigger ? 'blur(20px)' : 'none',
-          WebkitBackdropFilter: trigger ? 'blur(20px)' : 'none',
+          backdropFilter: trigger ? 'blur(20px) saturate(180%)' : 'none',
+          WebkitBackdropFilter: trigger ? 'blur(20px) saturate(180%)' : 'none',
           borderBottom: trigger
-            ? '1px solid rgba(148, 163, 184, 0.1)'
+            ? `1px solid ${alpha(theme.palette.divider, 0.08)}`
             : 'none',
-          transition: 'all 0.3s ease',
+          boxShadow: trigger
+            ? '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04)'
+            : 'none',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar sx={{ justifyContent: 'space-between', py: 1 }} disableGutters>
+          <Toolbar sx={{ justifyContent: 'space-between', py: 1.5 }} disableGutters>
             <Box
               component="a"
               href="#"
@@ -86,45 +93,55 @@ export default function Navbar() {
                 textDecoration: 'none',
               }}
             >
-              <Box
-                sx={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: 2,
-                  background: 'linear-gradient(135deg, #7C3AED 0%, #14B8A6 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 800,
-                  fontSize: '1.25rem',
-                  color: 'white',
-                }}
-              >
-                IC
-              </Box>
-              <GradientText variant="h6" sx={{ fontWeight: 700 }}>
-                IIT Connect
-              </GradientText>
+                <Box
+                    sx={{
+                        width: { xs: 80, sm: 90, md: 100 },
+                        height: { xs: 40, sm: 45, md: 50 },
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        overflow: 'hidden',
+                    }}
+                >
+                    <Image
+                        src="/sdgp_logo.png"
+                        alt="NextOra Logo"
+                        width={0}
+                        height={0}
+                        sizes="(max-width: 600px) 100px, (max-width: 900px) 120px, 150px"
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            objectFit: 'contain',
+                        }}
+                        priority
+                    />
+                </Box>
             </Box>
 
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 4 }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
               {navItems.map((item) => (
                 <Box
                   key={item.label}
-                  component="a"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
+                  component="button"
+                  onClick={() => scrollToSection(item.href)}
                   sx={{
-                    color: 'text.secondary',
-                    textDecoration: 'none',
+                    color: colors.text.secondary,
+                    background: 'transparent',
+                    border: 'none',
                     fontSize: '0.9rem',
                     fontWeight: 500,
                     cursor: 'pointer',
-                    transition: 'color 0.2s ease',
+                    padding: '8px 16px',
+                    borderRadius: 2,
+                    transition: 'all 0.2s ease',
                     '&:hover': {
-                      color: 'text.primary',
+                      color: colors.text.primary,
+                      background: alpha(colors.primary.main, 0.08),
+                    },
+                    '&:focus-visible': {
+                      outline: `3px solid ${colors.primary.light}`,
+                      outlineOffset: 2,
                     },
                   }}
                 >
@@ -143,11 +160,16 @@ export default function Navbar() {
             </Box>
 
             <IconButton
-              color="inherit"
-              aria-label="open drawer"
+              aria-label="open navigation menu"
               edge="end"
               onClick={handleDrawerToggle}
-              sx={{ display: { md: 'none' } }}
+              sx={{
+                display: { md: 'none' },
+                color: colors.text.primary,
+                '&:hover': {
+                  background: alpha(colors.primary.main, 0.08),
+                },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -163,18 +185,29 @@ export default function Navbar() {
             open={mobileOpen}
             onClose={handleDrawerToggle}
             ModalProps={{ keepMounted: true }}
-            PaperProps={{
-              sx: {
-                width: '100%',
-                maxWidth: 400,
-                background: 'rgba(10, 14, 26, 0.98)',
-                backdropFilter: 'blur(20px)',
+            slotProps={{
+              paper: {
+                sx: {
+                  width: '100%',
+                  maxWidth: 400,
+                  background: alpha(theme.palette.background.paper, 0.98),
+                  backdropFilter: 'blur(20px) saturate(180%)',
+                },
               },
             }}
           >
             <Box sx={{ p: 3 }}>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 4 }}>
-                <IconButton onClick={handleDrawerToggle} sx={{ color: 'white' }}>
+                <IconButton
+                  onClick={handleDrawerToggle}
+                  aria-label="close navigation menu"
+                  sx={{
+                    color: colors.text.primary,
+                    '&:hover': {
+                      background: alpha(colors.primary.main, 0.08),
+                    },
+                  }}
+                >
                   <CloseIcon />
                 </IconButton>
               </Box>
@@ -193,15 +226,19 @@ export default function Navbar() {
                           py: 2,
                           borderRadius: 2,
                           '&:hover': {
-                            background: 'rgba(124, 58, 237, 0.1)',
+                            background: alpha(colors.primary.main, 0.08),
                           },
                         }}
                       >
                         <ListItemText
                           primary={item.label}
-                          primaryTypographyProps={{
-                            fontSize: '1.25rem',
-                            fontWeight: 500,
+                          slotProps={{
+                            primary: {
+                              sx: {
+                                fontSize: '1.25rem',
+                                fontWeight: 500,
+                              },
+                            },
                           }}
                         />
                       </ListItemButton>

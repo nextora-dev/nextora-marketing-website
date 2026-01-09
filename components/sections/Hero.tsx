@@ -1,20 +1,21 @@
 'use client';
 
-import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Box, Button, Container, Grid, Stack, Typography, useTheme } from '@mui/material';
 import { PlayArrow, Rocket } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import GradientText from '../ui/GradientText';
-import AnimatedCounter from '../ui/AnimatedCounter';
-import { stats } from '@/data/content';
+import { alpha } from '@mui/material/styles';
+import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
-// Pre-generate random values for background elements
+// Pre-generate deterministic values for background elements
 const backgroundElements = Array.from({ length: 20 }, (_, i) => ({
     id: i,
-    duration: (i * 0.15 + 2) % 3 + 2, // Deterministic values between 2-5
-    delay: (i * 0.1) % 2, // Deterministic values between 0-2
-    width: ((i * 17) % 300) + 100, // Deterministic values between 100-400
+    duration: (i * 0.15 + 2) % 3 + 2,
+    delay: (i * 0.1) % 2,
+    width: ((i * 17) % 300) + 100,
     height: ((i * 23) % 300) + 100,
     left: ((i * 5) % 100),
     top: ((i * 7) % 100),
@@ -22,6 +23,12 @@ const backgroundElements = Array.from({ length: 20 }, (_, i) => ({
 }));
 
 export default function Hero() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        queueMicrotask(() => setMounted(true));
+    }, []);
+
     const scrollToSection = (id: string) => {
         const element = document.querySelector(id);
         if (element) {
@@ -29,10 +36,10 @@ export default function Hero() {
         }
     };
 
-    const colors = [
-        'rgba(124, 58, 237, 0.1)',
-        'rgba(20, 184, 166, 0.1)',
-        'rgba(249, 115, 22, 0.1)',
+    const themeColors = [
+        alpha(colors.indigo.main, 0.12),
+        alpha(colors.primary.main, 0.1),
+        alpha(colors.indigo.accent, 0.1),
     ];
 
     return (
@@ -46,50 +53,46 @@ export default function Hero() {
                 overflow: 'hidden',
                 pt: { xs: 12, md: 8 },
                 pb: 8,
-                background: `
-          radial-gradient(ellipse at 20% 0%, rgba(124, 58, 237, 0.2) 0%, transparent 50%),
-          radial-gradient(ellipse at 80% 0%, rgba(20, 184, 166, 0.15) 0%, transparent 50%),
-          radial-gradient(ellipse at 50% 100%, rgba(30, 58, 138, 0.2) 0%, transparent 50%),
-          #0A0E1A
-        `,
+                background: gradients.heroMesh,
             }}
         >
-            {/* Animated Background Elements */}
-            <Box
-                sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    overflow: 'hidden',
-                    pointerEvents: 'none',
-                }}
-            >
-                {backgroundElements.map((el) => (
-                    <MotionBox
-                        key={el.id}
-                        initial={{ opacity: 0 }}
-                        animate={{
-                            opacity: [0.1, 0.3, 0.1],
-                            scale: [1, 1.2, 1],
-                        }}
-                        transition={{
-                            duration: el.duration,
-                            repeat: Infinity,
-                            delay: el.delay,
-                        }}
-                        sx={{
-                            position: 'absolute',
-                            width: el.width,
-                            height: el.height,
-                            borderRadius: '50%',
-                            background: `radial-gradient(circle, ${colors[el.colorIndex]} 0%, transparent 70%)`,
-                            left: `${el.left}%`,
-                            top: `${el.top}%`,
-                            transform: 'translate(-50%, -50%)',
-                        }}
-                    />
-                ))}
-            </Box>
-            {/* Rest of the component remains unchanged */}
+            {/* Animated Background Elements - only render after mount to avoid hydration mismatch */}
+            {mounted && (
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        inset: 0,
+                        overflow: 'hidden',
+                        pointerEvents: 'none',
+                    }}
+                >
+                    {backgroundElements.map((el) => (
+                        <MotionBox
+                            key={el.id}
+                            initial={{ opacity: 0 }}
+                            animate={{
+                                opacity: [0.1, 0.3, 0.1],
+                                scale: [1, 1.2, 1],
+                            }}
+                            transition={{
+                                duration: el.duration,
+                                repeat: Infinity,
+                                delay: el.delay,
+                            }}
+                            sx={{
+                                position: 'absolute',
+                                width: el.width,
+                                height: el.height,
+                                borderRadius: '50%',
+                                background: `radial-gradient(circle, ${themeColors[el.colorIndex]} 0%, transparent 70%)`,
+                                left: `${el.left}%`,
+                                top: `${el.top}%`,
+                                transform: 'translate(-50%, -50%)',
+                            }}
+                        />
+                    ))}
+                </Box>
+            )}
 
 
             <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
@@ -108,8 +111,8 @@ export default function Hero() {
                   px: 2,
                   py: 0.75,
                   borderRadius: 5,
-                  background: 'rgba(124, 58, 237, 0.15)',
-                  border: '1px solid rgba(124, 58, 237, 0.3)',
+                  background: alpha(colors.primary.main, 0.15),
+                  border: `1px solid ${alpha(colors.primary.main, 0.3)}`,
                   mb: 3,
                 }}
               >
@@ -118,7 +121,7 @@ export default function Hero() {
                     width: 8,
                     height: 8,
                     borderRadius: '50%',
-                    background: '#14B8A6',
+                    background: colors.indigo.main,
                     animation: 'pulse 2s infinite',
                     '@keyframes pulse': {
                       '0%, 100%': { opacity: 1 },
@@ -126,7 +129,7 @@ export default function Hero() {
                     },
                   }}
                 />
-                <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+                <Typography variant="caption" sx={{ color: colors.text.secondary, fontWeight: 500 }}>
                   Now in Beta • Join 500+ Early Users
                 </Typography>
               </Box>
@@ -159,8 +162,7 @@ export default function Hero() {
                   lineHeight: 1.7,
                 }}
               >
-                The unified platform for timetable, kuppi sessions, campus navigation, events,
-                results, lost & found, and everything else you need at IIT.
+                  Replacing IIT intranet with a modern platform for academics, events, campus services, and student life — everything you need at IIT in one place.
               </Typography>
 
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mb: 6 }}>
@@ -181,57 +183,18 @@ export default function Hero() {
                   sx={{
                     px: 4,
                     py: 1.75,
-                    borderColor: 'rgba(148, 163, 184, 0.3)',
-                    color: 'text.primary',
+                    borderColor: alpha(colors.grey[400], 0.5),
+                    color: colors.text.primary,
+                    borderWidth: 2,
                     '&:hover': {
-                      borderColor: 'rgba(148, 163, 184, 0.5)',
-                      background: 'rgba(148, 163, 184, 0.05)',
+                      borderWidth: 2,
+                      borderColor: colors.primary.main,
+                      background: alpha(colors.primary.main, 0.04),
                     },
                   }}
                 >
                   Watch Demo
                 </Button>
-              </Stack>
-            </MotionBox>
-
-            {/* Stats Row */}
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <Stack
-                direction="row"
-                spacing={{ xs: 4, md: 6 }}
-                divider={
-                  <Box
-                    sx={{
-                      width: 1,
-                      height: 40,
-                      background: 'rgba(148, 163, 184, 0.2)',
-                    }}
-                  />
-                }
-              >
-                {stats.map((stat, index) => (
-                  <Box key={index}>
-                    <AnimatedCounter
-                      value={stat.value}
-                      suffix={stat.suffix}
-                      variant="h4"
-                      sx={{
-                        fontWeight: 700,
-                        background: 'linear-gradient(135deg, #7C3AED 0%, #14B8A6 100%)',
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                      }}
-                    />
-                    <Typography variant="body2" color="text.secondary">
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                ))}
               </Stack>
             </MotionBox>
           </Grid>
@@ -294,7 +257,7 @@ export default function Hero() {
                             width: '100%',
                             height: '100%',
                             borderRadius: '30px',
-                            background: '#0F172A',
+                            background: '#FFFFFF',
                             overflow: 'hidden',
                             display: 'flex',
                             flexDirection: 'column',
@@ -351,22 +314,22 @@ export default function Hero() {
                         <Box sx={{ p: 2, mt: 4, flex: 1 }}>
                             <Box
                                 sx={{
-                                    background: 'rgba(124, 58, 237, 0.25)',
-                                    borderRadius: 1,
+                                    background: `linear-gradient(135deg, ${alpha(colors.primary.main, 0.15)} 0%, ${alpha(colors.indigo.main, 0.15)} 100%)`,
+                                    borderRadius: 2,
                                     p: 1.5,
                                     mb: 1.5,
-                                    backdropFilter: 'blur(4px)',
+                                    border: `1px solid ${alpha(colors.primary.main, 0.2)}`,
                                 }}
                             >
                                 <Typography
                                     variant="caption"
-                                    sx={{ color: '#A78BFA', fontWeight: 600 }}
+                                    sx={{ color: colors.primary.main, fontWeight: 600 }}
                                 >
-                                    Today&apos;s Schedule
+                                    Today&#39;s Schedule
                                 </Typography>
                                 <Typography
                                     variant="body2"
-                                    sx={{ color: 'white', fontSize: '0.75rem', mt: 0.5 }}
+                                    sx={{ color: colors.text.secondary, fontSize: '0.75rem', mt: 0.5 }}
                                 >
                                     Software Engineering • 9:00 AM
                                 </Typography>
@@ -374,22 +337,22 @@ export default function Hero() {
 
                             <Box
                                 sx={{
-                                    background: 'rgba(45, 212, 191, 0.25)',
-                                    borderRadius: 1,
+                                    background: `linear-gradient(135deg, ${alpha(colors.indigo.main, 0.15)} 0%, ${alpha(colors.indigo.light, 0.15)} 100%)`,
+                                    borderRadius: 2,
                                     p: 1.5,
                                     mb: 1.5,
-                                    backdropFilter: 'blur(4px)',
+                                    border: `1px solid ${alpha(colors.indigo.main, 0.2)}`,
                                 }}
                             >
                                 <Typography
                                     variant="caption"
-                                    sx={{ color: '#2DD4BF', fontWeight: 600 }}
+                                    sx={{ color: colors.indigo.main, fontWeight: 600 }}
                                 >
                                     Upcoming Event
                                 </Typography>
                                 <Typography
                                     variant="body2"
-                                    sx={{ color: 'white', fontSize: '0.75rem', mt: 0.5 }}
+                                    sx={{ color: colors.text.secondary, fontSize: '0.75rem', mt: 0.5 }}
                                 >
                                     Tech Meetup • Tomorrow
                                 </Typography>
@@ -397,21 +360,21 @@ export default function Hero() {
 
                             <Box
                                 sx={{
-                                    background: 'rgba(249, 115, 22, 0.25)',
-                                    borderRadius: 1,
+                                    background: `linear-gradient(135deg, ${alpha(colors.sky.main, 0.15)} 0%, ${alpha(colors.cyan.main, 0.15)} 100%)`,
+                                    borderRadius: 2,
                                     p: 1.5,
-                                    backdropFilter: 'blur(4px)',
+                                    border: `1px solid ${alpha(colors.sky.main, 0.2)}`,
                                 }}
                             >
                                 <Typography
                                     variant="caption"
-                                    sx={{ color: '#F97316', fontWeight: 600 }}
+                                    sx={{ color: colors.sky.main, fontWeight: 600 }}
                                 >
                                     Kuppi Session
                                 </Typography>
                                 <Typography
                                     variant="body2"
-                                    sx={{ color: 'white', fontSize: '0.75rem', mt: 0.5 }}
+                                    sx={{ color: colors.text.secondary, fontSize: '0.75rem', mt: 0.5 }}
                                 >
                                     Database Systems • 3 spots left
                                 </Typography>
@@ -426,7 +389,7 @@ export default function Hero() {
                   position: 'absolute',
                   width: '120%',
                   height: '120%',
-                  background: 'radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 60%)',
+                  background: `radial-gradient(circle, ${alpha(colors.primary.main, 0.15)} 0%, transparent 60%)`,
                   pointerEvents: 'none',
                 }}
               />
@@ -451,14 +414,14 @@ export default function Hero() {
           gap: 1,
         }}
       >
-        <Typography variant="caption" color="text.secondary">
+        <Typography variant="caption" sx={{ color: colors.text.secondary }}>
           Scroll to explore
         </Typography>
         <Box
           sx={{
             width: 24,
             height: 40,
-            border: '2px solid rgba(148, 163, 184, 0.3)',
+            border: `2px solid ${alpha(colors.grey[400], 0.4)}`,
             borderRadius: 12,
             display: 'flex',
             justifyContent: 'center',
@@ -469,7 +432,7 @@ export default function Hero() {
             sx={{
               width: 4,
               height: 8,
-              background: 'rgba(148, 163, 184, 0.5)',
+              background: alpha(colors.grey[500], 0.6),
               borderRadius: 2,
             }}
           />

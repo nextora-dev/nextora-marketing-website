@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { Box, Grid, Typography, TextField, Button, InputAdornment } from '@mui/material';
 import { Email } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
+import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 export default function FinalCTA() {
   const [email, setEmail] = useState('');
@@ -34,7 +36,7 @@ export default function FinalCTA() {
           <Typography
             variant="overline"
             sx={{
-              color: '#14B8A6',
+              color: colors.indigo.main,
               fontWeight: 600,
               letterSpacing: 2,
               mb: 2,
@@ -54,7 +56,7 @@ export default function FinalCTA() {
             sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
           >
             Join thousands of IIT students who are already enjoying a smarter campus life.
-            Be among the first to experience IIT Connect.
+            Be among the first to experience NextOra.
           </Typography>
         </MotionBox>
       </Box>
@@ -98,7 +100,7 @@ export default function FinalCTA() {
                       width: 80,
                       height: 80,
                       borderRadius: '50%',
-                      background: 'linear-gradient(135deg, #14B8A6 0%, #7C3AED 100%)',
+                      background: gradients.blueIndigo,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -123,26 +125,30 @@ export default function FinalCTA() {
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     required
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Email sx={{ color: 'text.secondary' }} />
-                        </InputAdornment>
-                      ),
+                    slotProps={{
+                      input: {
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <Email sx={{ color: colors.grey[400] }} />
+                          </InputAdornment>
+                        ),
+                      },
                     }}
                     sx={{
                       mb: 2,
                       '& .MuiOutlinedInput-root': {
-                        background: 'rgba(15, 23, 42, 0.6)',
-                        borderRadius: 2,
+                        background: colors.white,
+                        borderRadius: 3,
                         '& fieldset': {
-                          borderColor: 'rgba(148, 163, 184, 0.2)',
+                          borderColor: colors.grey[300],
+                          borderWidth: 1.5,
                         },
                         '&:hover fieldset': {
-                          borderColor: 'rgba(124, 58, 237, 0.5)',
+                          borderColor: alpha(colors.primary.main, 0.5),
                         },
                         '&.Mui-focused fieldset': {
-                          borderColor: '#7C3AED',
+                          borderColor: colors.primary.main,
+                          borderWidth: 2,
                         },
                       },
                     }}

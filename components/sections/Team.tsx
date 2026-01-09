@@ -6,24 +6,19 @@ import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
 import { teamMembers } from '@/data/content';
+import { colors, gradients, avatarGradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
-
-const avatarGradients = [
-  'linear-gradient(135deg, #7C3AED 0%, #EC4899 100%)',
-  'linear-gradient(135deg, #14B8A6 0%, #7C3AED 100%)',
-  'linear-gradient(135deg, #F97316 0%, #7C3AED 100%)',
-  'linear-gradient(135deg, #1E3A8A 0%, #14B8A6 100%)',
-];
+const MotionBox = motion.create(Box);
 
 export default function Team() {
+
   return (
     <SectionWrapper id="team" background="mesh">
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
           sx={{
-            color: '#EC4899',
+            color: colors.indigo.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -37,7 +32,7 @@ export default function Team() {
           <GradientText
             variant="h2"
             component="span"
-            gradient="linear-gradient(135deg, #EC4899 0%, #7C3AED 100%)"
+            gradient={gradients.blueIndigo}
           >
             Students
           </GradientText>
@@ -47,7 +42,7 @@ export default function Team() {
           variant="h6"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 700, mx: 'auto', mb: 4 }}
         >
-          We&apos;re a team of IIT alumni and tech enthusiasts who understand the challenges
+          We&apos;re a team of IIT undergraduates from the SE-03 group who understand the challenges
           of campus life. Our mission is to make every student&apos;s journey smoother.
         </Typography>
 
@@ -75,10 +70,10 @@ export default function Team() {
             &ldquo;To empower every IIT student with technology that simplifies campus life
             and creates lasting connections.&rdquo;
           </Typography>
-          <Typography
+            <Typography
             variant="caption"
             sx={{
-              color: '#7C3AED',
+              color: colors.primary.main,
               fontWeight: 600,
               display: 'block',
               mt: 2,
@@ -130,7 +125,7 @@ export default function Team() {
                 <Typography
                   variant="caption"
                   sx={{
-                    color: '#7C3AED',
+                    color: colors.primary.main,
                     fontWeight: 600,
                     display: 'block',
                     mb: 2,

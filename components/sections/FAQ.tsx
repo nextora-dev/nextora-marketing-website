@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { Box, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { Add, Remove } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GradientText from '../ui/GradientText';
 import { faqs } from '@/data/content';
+import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 export default function FAQ() {
   const [expanded, setExpanded] = useState<string | false>('panel0');
@@ -23,7 +25,7 @@ export default function FAQ() {
         <Typography
           variant="overline"
           sx={{
-            color: '#14B8A6',
+            color: colors.indigo.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -59,22 +61,24 @@ export default function FAQ() {
               expanded={expanded === `panel${index}`}
               onChange={handleChange(`panel${index}`)}
               sx={{
-                background: 'rgba(15, 23, 42, 0.6)',
+                background: colors.white,
                 backdropFilter: 'blur(20px)',
                 border: '1px solid',
                 borderColor:
                   expanded === `panel${index}`
-                    ? 'rgba(124, 58, 237, 0.3)'
-                    : 'rgba(148, 163, 184, 0.1)',
+                    ? alpha(colors.primary.main, 0.25)
+                    : colors.grey[200],
                 borderRadius: '16px !important',
                 mb: 2,
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)',
                 '&::before': {
                   display: 'none',
                 },
                 '&:hover': {
-                  borderColor: 'rgba(124, 58, 237, 0.3)',
+                  borderColor: alpha(colors.primary.main, 0.25),
+                  boxShadow: `0 4px 12px ${alpha(colors.primary.main, 0.08)}`,
                 },
               }}
             >
@@ -87,8 +91,8 @@ export default function FAQ() {
                       borderRadius: '50%',
                       background:
                         expanded === `panel${index}`
-                          ? 'linear-gradient(135deg, #7C3AED 0%, #14B8A6 100%)'
-                          : 'rgba(124, 58, 237, 0.1)',
+                          ? gradients.blueIndigo
+                          : alpha(colors.primary.main, 0.1),
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -98,7 +102,7 @@ export default function FAQ() {
                     {expanded === `panel${index}` ? (
                       <Remove sx={{ fontSize: 18, color: 'white' }} />
                     ) : (
-                      <Add sx={{ fontSize: 18, color: '#7C3AED' }} />
+                      <Add sx={{ fontSize: 18, color: colors.primary.main }} />
                     )}
                   </Box>
                 }

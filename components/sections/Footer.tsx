@@ -1,18 +1,18 @@
 'use client';
 
 import { Box, Container, Grid, Typography, Stack, IconButton, Divider } from '@mui/material';
-import { Twitter, LinkedIn, Instagram, GitHub, Email } from '@mui/icons-material';
+import { LinkedIn, Instagram, Email } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import GradientText from '../ui/GradientText';
 import { footerLinks } from '@/data/content';
+import Image from "next/image";
+import { alpha } from '@mui/material/styles';
+import { colors } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const socialLinks = [
-  { icon: Twitter, href: '#', label: 'Twitter' },
   { icon: LinkedIn, href: '#', label: 'LinkedIn' },
   { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: GitHub, href: '#', label: 'GitHub' },
 ];
 
 export default function Footer() {
@@ -20,29 +20,18 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        background: 'linear-gradient(180deg, #0A0E1A 0%, #050710 100%)',
+        background: `linear-gradient(180deg, ${colors.grey[50]} 0%, ${colors.grey[100]} 100%)`,
         pt: 10,
         pb: 4,
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Decorative gradient */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 1,
-          background: 'linear-gradient(90deg, transparent 0%, #7C3AED 50%, transparent 100%)',
-        }}
-      />
 
       <Container maxWidth="lg">
-        <Grid container spacing={6}>
+        <Grid container spacing={4}>
           {/* Brand Column */}
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,25 +39,29 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 3 }}>
-                <Box
-                  sx={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: 2,
-                    background: 'linear-gradient(135deg, #7C3AED 0%, #14B8A6 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 800,
-                    fontSize: '1.25rem',
-                    color: 'white',
-                  }}
-                >
-                  IC
-                </Box>
-                <GradientText variant="h5" sx={{ fontWeight: 700 }}>
-                  IIT Connect
-                </GradientText>
+                  <Box
+                      sx={{
+                          width: { xs: 80, sm: 90, md: 100 },
+                          height: { xs: 40, sm: 45, md: 50 },
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          overflow: 'hidden',
+                      }}
+                  >
+                      <Image
+                          src="/sdgp_logo.png"
+                          alt="Icon"
+                          width={0}
+                          height={0}
+                          sizes="(max-width: 600px) 100px, (max-width: 900px) 120px, 150px"
+                          style={{
+                              width: '100%',
+                              height: 'auto',
+                              objectFit: 'contain',
+                          }}
+                      />
+                  </Box>
               </Box>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8, mb: 3 }}>
                 The unified campus platform for IIT Sri Lanka. Simplifying student life,
@@ -83,12 +76,14 @@ export default function Footer() {
                     href={social.href}
                     aria-label={social.label}
                     sx={{
-                      color: 'text.secondary',
-                      border: '1px solid rgba(148, 163, 184, 0.2)',
+                      color: colors.text.secondary,
+                      border: `1px solid ${colors.grey[300]}`,
+                      transition: 'all 0.2s ease',
                       '&:hover': {
-                        background: 'rgba(124, 58, 237, 0.1)',
-                        borderColor: 'rgba(124, 58, 237, 0.3)',
-                        color: '#7C3AED',
+                        background: alpha(colors.primary.main, 0.08),
+                        borderColor: alpha(colors.primary.main, 0.4),
+                        color: colors.primary.main,
+                        transform: 'translateY(-2px)',
                       },
                     }}
                   >
@@ -99,7 +94,7 @@ export default function Footer() {
             </MotionBox>
           </Grid>
 
-          {/* Links Columns */}
+          {/* Product Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
@@ -122,7 +117,7 @@ export default function Footer() {
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                       '&:hover': {
-                        color: '#7C3AED',
+                        color: colors.primary.main,
                       },
                     }}
                   >
@@ -133,6 +128,7 @@ export default function Footer() {
             </MotionBox>
           </Grid>
 
+          {/* Company Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
@@ -155,7 +151,7 @@ export default function Footer() {
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                       '&:hover': {
-                        color: '#7C3AED',
+                        color: colors.primary.main,
                       },
                     }}
                   >
@@ -166,6 +162,7 @@ export default function Footer() {
             </MotionBox>
           </Grid>
 
+          {/* Resources Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
@@ -188,7 +185,7 @@ export default function Footer() {
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                       '&:hover': {
-                        color: '#7C3AED',
+                        color: colors.primary.main,
                       },
                     }}
                   >
@@ -199,6 +196,7 @@ export default function Footer() {
             </MotionBox>
           </Grid>
 
+          {/* Legal Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
@@ -221,7 +219,7 @@ export default function Footer() {
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                       '&:hover': {
-                        color: '#7C3AED',
+                        color: colors.primary.main,
                       },
                     }}
                   >
@@ -233,7 +231,7 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 6, borderColor: 'rgba(148, 163, 184, 0.1)' }} />
+        <Divider sx={{ my: 6, borderColor: colors.grey[200] }} />
 
         {/* Bottom Section */}
         <Stack
@@ -243,33 +241,26 @@ export default function Footer() {
           spacing={2}
         >
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            © {new Date().getFullYear()} IIT Connect. All rights reserved.
+            © {new Date().getFullYear()} NextOra. All rights reserved.
           </Typography>
           <Stack direction="row" spacing={1} alignItems="center">
             <Email sx={{ fontSize: 18, color: 'text.secondary' }} />
             <Typography
               component="a"
-              href="mailto:hello@iitconnect.lk"
+              href="mailto:nextora.platform@gmail.com"
               variant="body2"
               sx={{
                 color: 'text.secondary',
                 textDecoration: 'none',
                 '&:hover': {
-                  color: '#7C3AED',
+                  color: colors.primary.main,
                 },
               }}
             >
-              hello@iitconnect.lk
+                nextora.platform@gmail.com
             </Typography>
           </Stack>
         </Stack>
-
-        {/* Made with love */}
-        <Box sx={{ textAlign: 'center', mt: 4 }}>
-          <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Made with 💜 by IIT Students
-          </Typography>
-        </Box>
       </Container>
 
       {/* Background decorations */}
@@ -281,7 +272,7 @@ export default function Footer() {
           width: 400,
           height: 400,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(124, 58, 237, 0.05) 0%, transparent 70%)',
+          background: `radial-gradient(circle, ${alpha(colors.primary.main, 0.05)} 0%, transparent 70%)`,
           pointerEvents: 'none',
         }}
       />
@@ -293,7 +284,7 @@ export default function Footer() {
           width: 300,
           height: 300,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(20, 184, 166, 0.05) 0%, transparent 70%)',
+          background: `radial-gradient(circle, ${alpha(colors.indigo.main, 0.05)} 0%, transparent 70%)`,
           pointerEvents: 'none',
         }}
       />

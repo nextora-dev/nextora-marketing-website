@@ -2,21 +2,24 @@
 
 import { Box, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
 import { features } from '@/data/content';
+import { colors } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 export default function Features() {
+
   return (
     <SectionWrapper id="features" background="default" paddingY={16}>
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
           sx={{
-            color: '#7C3AED',
+            color: colors.primary.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -118,7 +121,7 @@ export default function Features() {
           width: 500,
           height: 500,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%)',
+          background: `radial-gradient(circle, ${alpha(colors.primary.main, 0.06)} 0%, transparent 70%)`,
           pointerEvents: 'none',
         }}
       />
@@ -130,7 +133,7 @@ export default function Features() {
           width: 400,
           height: 400,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(20, 184, 166, 0.06) 0%, transparent 70%)',
+          background: `radial-gradient(circle, ${alpha(colors.indigo.main, 0.06)} 0%, transparent 70%)`,
           pointerEvents: 'none',
         }}
       />

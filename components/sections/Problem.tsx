@@ -2,21 +2,24 @@
 
 import { Box, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
 import { problems } from '@/data/content';
+import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 export default function Problem() {
+
   return (
     <SectionWrapper id="problem" background="gradient">
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
           sx={{
-            color: '#F97316',
+            color: colors.sky.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -27,7 +30,7 @@ export default function Problem() {
         </Typography>
         <Typography variant="h2" sx={{ mb: 2 }}>
           Sound{' '}
-          <GradientText variant="h2" component="span" gradient="linear-gradient(135deg, #F97316 0%, #7C3AED 100%)">
+          <GradientText variant="h2" component="span" gradient={gradients.skyBlue}>
             Familiar?
           </GradientText>
         </Typography>
@@ -49,15 +52,15 @@ export default function Problem() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <GlassCard
-                glow="#F97316"
+                glow={colors.sky.main}
                 sx={{
                   height: '100%',
                   transition: 'all 0.3s ease',
                   '&:hover': {
-                    borderColor: 'rgba(249, 115, 22, 0.3)',
+                    borderColor: alpha(colors.sky.main, 0.3),
                     '& .problem-icon': {
                       transform: 'scale(1.1) rotate(-5deg)',
-                      background: 'rgba(249, 115, 22, 0.2)',
+                      background: alpha(colors.sky.main, 0.2),
                     },
                   },
                 }}
@@ -68,7 +71,7 @@ export default function Problem() {
                     width: 56,
                     height: 56,
                     borderRadius: 3,
-                    background: 'rgba(249, 115, 22, 0.1)',
+                    background: alpha(colors.sky.main, 0.1),
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -76,7 +79,7 @@ export default function Problem() {
                     transition: 'all 0.3s ease',
                   }}
                 >
-                  <problem.icon sx={{ fontSize: 28, color: '#F97316' }} />
+                  <problem.icon sx={{ fontSize: 28, color: colors.sky.main }} />
                 </Box>
                 <Typography variant="h6" sx={{ mb: 1.5, fontWeight: 600 }}>
                   {problem.title}
@@ -99,7 +102,7 @@ export default function Problem() {
           width: 400,
           height: 400,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%)',
+          background: `radial-gradient(circle, ${alpha(colors.sky.main, 0.08)} 0%, transparent 70%)`,
           pointerEvents: 'none',
         }}
       />

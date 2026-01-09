@@ -9,7 +9,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-    title: 'IIT Connect | Your Unified Campus Platform',
+    title: 'NextOra | Your Unified Campus Platform',
     description:
         'The unified platform for timetable, kuppi sessions, campus navigation, events, results, lost & found, and everything else you need at IIT Sri Lanka.',
     keywords: [
@@ -22,15 +22,16 @@ export const metadata: Metadata = {
         'campus navigation',
         'events',
         'university app',
+        'NextOra',
     ],
-    authors: [{ name: 'IIT Connect Team' }],
+    authors: [{ name: 'NextOra Team' }],
     openGraph: {
-        title: 'IIT Connect | Your Unified Campus Platform',
+        title: 'NextOra | Your Unified Campus Platform',
         description:
             'One app for your entire campus life at IIT Sri Lanka. Timetable, events, navigation, and more.',
         type: 'website',
         locale: 'en_US',
-        siteName: 'IIT Connect',
+        siteName: 'NextOra',
     },
 };
 
@@ -43,9 +44,10 @@ export default function RootLayout({
         <html lang="en" className={plusJakartaSans.variable}>
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="theme-color" content="#0A0E1A" />
+            <meta name="theme-color" content="#FFFFFF" />
+            <meta name="color-scheme" content="light only" />
         </head>
-        <body style={{ margin: 0, padding: 0, backgroundColor: '#0A0E1A', fontFamily: 'var(--font-plus-jakarta-sans), sans-serif' }}>
+        <body style={{ margin: 0, padding: 0, backgroundColor: '#F8FAFC', fontFamily: 'var(--font-plus-jakarta-sans), sans-serif' }}>
         <ThemeRegistry>{children}</ThemeRegistry>
         </body>
         </html>

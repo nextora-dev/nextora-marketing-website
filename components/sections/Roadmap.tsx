@@ -2,42 +2,45 @@
 
 import { Box, Grid, Typography, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
 import { roadmap } from '@/data/content';
+import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
-
-const statusConfig = {
-  completed: {
-    label: 'Completed',
-    color: '#10B981',
-    bg: 'rgba(16, 185, 129, 0.1)',
-    border: 'rgba(16, 185, 129, 0.3)',
-  },
-  'in-progress': {
-    label: 'In Progress',
-    color: '#F97316',
-    bg: 'rgba(249, 115, 22, 0.1)',
-    border: 'rgba(249, 115, 22, 0.3)',
-  },
-  upcoming: {
-    label: 'Coming Soon',
-    color: '#7C3AED',
-    bg: 'rgba(124, 58, 237, 0.1)',
-    border: 'rgba(124, 58, 237, 0.3)',
-  },
-};
+const MotionBox = motion.create(Box);
 
 export default function Roadmap() {
+
+  const statusConfig = {
+    completed: {
+      label: 'Completed',
+      color: colors.success.main,
+      bg: alpha(colors.success.main, 0.1),
+      border: alpha(colors.success.main, 0.3),
+    },
+    'in-progress': {
+      label: 'In Progress',
+      color: colors.sky.main,
+      bg: alpha(colors.sky.main, 0.1),
+      border: alpha(colors.sky.main, 0.3),
+    },
+    upcoming: {
+      label: 'Coming Soon',
+      color: colors.primary.main,
+      bg: alpha(colors.primary.main, 0.1),
+      border: alpha(colors.primary.main, 0.3),
+    },
+  } as const;
+
   return (
     <SectionWrapper id="roadmap" background="gradient">
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
           sx={{
-            color: '#F97316',
+            color: colors.sky.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -51,7 +54,7 @@ export default function Roadmap() {
           <GradientText
             variant="h2"
             component="span"
-            gradient="linear-gradient(135deg, #F97316 0%, #7C3AED 100%)"
+            gradient={gradients.skyBlue}
           >
             Coming Next
           </GradientText>

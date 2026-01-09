@@ -2,21 +2,24 @@
 
 import { Box, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
 import { howItWorks } from '@/data/content';
+import { colors, gradients } from '@/theme/colors';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 export default function HowItWorks() {
+
   return (
     <SectionWrapper id="how-it-works" background="gradient">
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
           sx={{
-            color: '#14B8A6',
+            color: colors.indigo.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -59,7 +62,7 @@ export default function HowItWorks() {
                     left: '60%',
                     width: '80%',
                     height: 2,
-                    background: 'linear-gradient(90deg, rgba(124, 58, 237, 0.3) 0%, rgba(20, 184, 166, 0.3) 100%)',
+                    background: `linear-gradient(90deg, ${alpha(colors.primary.main, 0.3)} 0%, ${alpha(colors.indigo.main, 0.3)} 100%)`,
                     '&::after': {
                       content: '""',
                       position: 'absolute',
@@ -68,7 +71,7 @@ export default function HowItWorks() {
                       width: 8,
                       height: 8,
                       borderRadius: '50%',
-                      background: 'rgba(20, 184, 166, 0.5)',
+                      background: alpha(colors.indigo.main, 0.5),
                     },
                   }}
                 />
@@ -92,14 +95,14 @@ export default function HowItWorks() {
                     width: 44,
                     height: 44,
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #7C3AED 0%, #14B8A6 100%)',
+                    background: gradients.blueIndigo,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontWeight: 700,
                     fontSize: '1.1rem',
                     color: 'white',
-                    boxShadow: '0 8px 24px rgba(124, 58, 237, 0.4)',
+                    boxShadow: `0 8px 24px ${alpha(colors.primary.main, 0.4)}`,
                   }}
                 >
                   {item.step}
@@ -111,7 +114,7 @@ export default function HowItWorks() {
                       width: 64,
                       height: 64,
                       borderRadius: 3,
-                      background: 'rgba(124, 58, 237, 0.1)',
+                      background: alpha(colors.primary.main, 0.1),
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -119,7 +122,7 @@ export default function HowItWorks() {
                       mb: 2.5,
                     }}
                   >
-                    <item.icon sx={{ fontSize: 32, color: '#7C3AED' }} />
+                    <item.icon sx={{ fontSize: 32, color: colors.primary.main }} />
                   </Box>
                   <Typography variant="h6" sx={{ mb: 1.5, fontWeight: 600 }}>
                     {item.title}

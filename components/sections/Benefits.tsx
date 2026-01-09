@@ -2,23 +2,25 @@
 
 import { Box, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
 import GlassCard from '../ui/GlassCard';
 import GradientText from '../ui/GradientText';
 import { benefits } from '@/data/content';
+import { colors } from '@/theme/colors';
 
-const MotionBox = motion(Box);
-
-const colors = ['#7C3AED', '#14B8A6', '#F97316', '#1E3A8A', '#EC4899'];
+const MotionBox = motion.create(Box);
 
 export default function Benefits() {
+  const themeColors = [colors.primary.main, colors.indigo.main, colors.sky.main, colors.cyan.main];
+
   return (
     <SectionWrapper id="benefits" background="default">
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
           sx={{
-            color: '#7C3AED',
+            color: colors.primary.main,
             fontWeight: 600,
             letterSpacing: 2,
             mb: 2,
@@ -43,9 +45,9 @@ export default function Benefits() {
 
       <Grid container spacing={3}>
         {benefits.map((benefit, index) => {
-          const color = colors[index % colors.length];
+          const color = themeColors[index % themeColors.length];
           return (
-            <Grid size={{ xs: 12, sm: 6, md: index < 2 ? 6 : 4 }} key={benefit.title}>
+            <Grid size={{ xs: 12, sm: 6, md: index < 2 ? 6 : 6 }} key={benefit.title}>
               <MotionBox
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -61,10 +63,10 @@ export default function Benefits() {
                     gap: 3,
                     transition: 'all 0.3s ease',
                     '&:hover': {
-                      borderColor: `${color}40`,
+                      borderColor: alpha(color || colors.primary.main, 0.25),
                       '& .benefit-icon': {
                         transform: 'scale(1.1)',
-                        background: `${color}30`,
+                        background: alpha(color || colors.primary.main, 0.2),
                       },
                     },
                   }}
@@ -75,7 +77,7 @@ export default function Benefits() {
                       width: 56,
                       height: 56,
                       borderRadius: 3,
-                      background: `${color}15`,
+                      background: alpha(color || colors.primary.main, 0.1),
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
