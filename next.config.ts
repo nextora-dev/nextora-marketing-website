@@ -21,8 +21,22 @@ const nextConfig: NextConfig = {
   // Experimental performance features
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['@mui/material', '@mui/icons-material', 'framer-motion'],
+    optimizePackageImports: [
+      '@mui/material',
+      '@mui/icons-material',
+      'framer-motion',
+      '@emotion/react',
+      '@emotion/styled',
+      'react-icons',
+    ],
   },
+
+  // Compiler optimizations for smaller bundles
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
 
   // SEO: Trailing slash configuration
   trailingSlash: false,

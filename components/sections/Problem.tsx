@@ -15,9 +15,10 @@ export default function Problem() {
 
   return (
     <SectionWrapper id="problem" background="gradient">
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
+          component="span"
           sx={{
             color: colors.sky.main,
             fontWeight: 600,
@@ -28,7 +29,7 @@ export default function Problem() {
         >
           THE PROBLEM
         </Typography>
-        <Typography variant="h2" sx={{ mb: 2 }}>
+        <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Sound{' '}
           <GradientText variant="h2" component="span" gradient={gradients.skyBlue}>
             Familiar?
@@ -36,6 +37,7 @@ export default function Problem() {
         </Typography>
         <Typography
           variant="h6"
+          component="p"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
         >
           Every IIT student knows these struggles. We&apos;ve all been there.
@@ -81,7 +83,7 @@ export default function Problem() {
                 >
                   <problem.icon sx={{ fontSize: 28, color: colors.sky.main }} />
                 </Box>
-                <Typography variant="h6" sx={{ mb: 1.5, fontWeight: 600 }}>
+                <Typography variant="h6" component="h3" sx={{ mb: 1.5, fontWeight: 600 }}>
                   {problem.title}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>

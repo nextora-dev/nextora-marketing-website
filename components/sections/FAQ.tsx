@@ -118,6 +118,7 @@ export default function FAQ() {
               >
                 <Typography
                   variant="h6"
+                  component="h3"
                   sx={{
                     fontWeight: 600,
                     fontSize: '1rem',

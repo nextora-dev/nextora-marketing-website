@@ -2,10 +2,14 @@ import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import ThemeRegistry from '@/theme/ThemeRegistry';
 
+// Optimize font loading - only load necessary weights
 const plusJakartaSans = Plus_Jakarta_Sans({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-plus-jakarta-sans',
+    weight: ['400', '500', '600', '700', '800'],
+    preload: true,
+    fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 // Comprehensive SEO Metadata

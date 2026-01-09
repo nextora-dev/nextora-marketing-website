@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   AppBar,
   Box,
@@ -14,10 +14,8 @@ import {
   ListItemText,
   Toolbar,
   useScrollTrigger,
-  useTheme,
 } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
-import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { alpha } from '@mui/material/styles';
 import { colors } from '@/theme/colors';
@@ -30,18 +28,11 @@ const navItems = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const theme = useTheme();
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 50,
   });
-
-  useEffect(() => {
-    // Use queueMicrotask to avoid synchronous setState warning
-    queueMicrotask(() => setMounted(true));
-  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -55,25 +46,20 @@ export default function Navbar() {
     setMobileOpen(false);
   };
 
-  if (!mounted) return null;
 
   return (
     <>
       <AppBar
-        component={motion.header}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
         position="fixed"
         elevation={0}
         sx={{
           background: trigger
-            ? alpha(theme.palette.background.paper, 0.92)
+            ? 'rgba(255, 255, 255, 0.92)'
             : 'transparent',
           backdropFilter: trigger ? 'blur(20px) saturate(180%)' : 'none',
           WebkitBackdropFilter: trigger ? 'blur(20px) saturate(180%)' : 'none',
           borderBottom: trigger
-            ? `1px solid ${alpha(theme.palette.divider, 0.08)}`
+            ? '1px solid rgba(0, 0, 0, 0.05)'
             : 'none',
           boxShadow: trigger
             ? '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04)'
@@ -177,8 +163,7 @@ export default function Navbar() {
         </Container>
       </AppBar>
 
-      <AnimatePresence>
-        {mobileOpen && (
+      {mobileOpen && (
           <Drawer
             variant="temporary"
             anchor="right"
@@ -190,7 +175,7 @@ export default function Navbar() {
                 sx: {
                   width: '100%',
                   maxWidth: 400,
-                  background: alpha(theme.palette.background.paper, 0.98),
+                  background: 'rgba(255, 255, 255, 0.98)',
                   backdropFilter: 'blur(20px) saturate(180%)',
                 },
               },
@@ -212,14 +197,8 @@ export default function Navbar() {
                 </IconButton>
               </Box>
               <List>
-                {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <ListItem disablePadding>
+                {navItems.map((item) => (
+                  <ListItem key={item.label} disablePadding>
                       <ListItemButton
                         onClick={() => scrollToSection(item.href)}
                         sx={{
@@ -243,14 +222,9 @@ export default function Navbar() {
                         />
                       </ListItemButton>
                     </ListItem>
-                  </motion.div>
                 ))}
               </List>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
+              <Box>
                 <Button
                   fullWidth
                   variant="contained"
@@ -261,11 +235,10 @@ export default function Navbar() {
                 >
                   Get Early Access
                 </Button>
-              </motion.div>
+              </Box>
             </Box>
           </Drawer>
         )}
-      </AnimatePresence>
     </>
   );
 }
