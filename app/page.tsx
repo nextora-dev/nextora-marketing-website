@@ -143,6 +143,93 @@ export default function Home() {
                     __html: JSON.stringify(homePageJsonLd),
                 }}
             />
+
+            {/* Server-Rendered SEO Content - Visible to crawlers immediately */}
+            {/* This content is hidden visually but readable by search engines */}
+            <article
+                itemScope
+                itemType="https://schema.org/WebPage"
+                style={{
+                    position: 'absolute',
+                    width: '1px',
+                    height: '1px',
+                    padding: 0,
+                    margin: '-1px',
+                    overflow: 'hidden',
+                    clip: 'rect(0, 0, 0, 0)',
+                    whiteSpace: 'nowrap',
+                    border: 0,
+                }}
+            >
+                <h1 itemProp="headline">NextOra - #1 Campus Platform for IIT Sri Lanka Students</h1>
+                <p itemProp="description">
+                    The ultimate unified platform for IIT Sri Lanka students. Access timetables,
+                    kuppi sessions, AR campus navigation, events, and connect with your campus community.
+                </p>
+
+                <section>
+                    <h2>Features - Complete Campus Management Tools for IIT Students</h2>
+                    <p>
+                        Explore NextOra comprehensive features: real-time timetables, kuppi session
+                        coordination, AR navigation, event calendar, and seamless campus integration
+                        for IIT Sri Lanka students.
+                    </p>
+                    <ul>
+                        <li>Academic Hub - Real-time timetables, exam schedules, and results</li>
+                        <li>Kuppi Sessions - Peer tutoring coordination and notes sharing</li>
+                        <li>AR Campus Navigation - Augmented reality wayfinding for IIT buildings</li>
+                        <li>Events and Tickets - Campus event discovery and QR ticketing</li>
+                        <li>Student Elections - Secure digital voting system</li>
+                        <li>Lost and Found - AI-powered item matching</li>
+                        <li>Lecturer Connect - Book consultations with lecturers</li>
+                        <li>SRU Portal - Student Representative Union communication</li>
+                        <li>Boarding Houses - Verified accommodation listings</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>How It Works - Easy Campus Management</h2>
+                    <p>
+                        Discover how NextOra simplifies campus life for IIT students. One platform
+                        for schedules, collaboration, navigation, and staying connected with campus activities.
+                    </p>
+                    <ol>
+                        <li>Sign in with your IIT credentials for secure access</li>
+                        <li>Personalize your dashboard with courses and interests</li>
+                        <li>Get real-time updates for timetable changes and events</li>
+                        <li>Access all campus services from one unified platform</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>About NextOra - Built by IIT Students for IIT Students</h2>
+                    <p>
+                        NextOra is developed by IIT Sri Lanka undergraduates from the SE-03 group
+                        as part of the SDGP module. We understand the challenges of campus life
+                        and built this platform to solve them.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions about NextOra</h2>
+                    <dl>
+                        <dt>What is NextOra?</dt>
+                        <dd>NextOra is the unified campus platform for IIT Sri Lanka students, combining timetables, events, AR navigation, kuppi sessions, and more.</dd>
+                        <dt>Is NextOra free for IIT students?</dt>
+                        <dd>Yes, NextOra is completely free for all IIT Sri Lanka students and staff.</dd>
+                        <dt>How secure is NextOra?</dt>
+                        <dd>NextOra uses enterprise-grade security including OAuth2, JWT tokens, and 2FA options.</dd>
+                    </dl>
+                </section>
+
+                <footer>
+                    <p>Contact: nextora.platform@gmail.com</p>
+                    <p>Location: Informatics Institute of Technology, Colombo, Sri Lanka</p>
+                    <p>© 2025 NextOra. All rights reserved.</p>
+                </footer>
+            </article>
+
+            {/* Main visible content (client-rendered) */}
             <HomeContent />
         </>
     );
