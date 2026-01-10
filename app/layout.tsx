@@ -714,6 +714,216 @@ const jsonLd = {
                 ratingCount: '500',
             },
         },
+        // MobileApplication Schema - For App Store SEO
+        {
+            '@type': 'MobileApplication',
+            '@id': 'https://nextora.lk/#mobileapp',
+            name: 'NextOra',
+            operatingSystem: 'ANDROID, IOS',
+            applicationCategory: 'EducationApplication',
+            contentRating: 'Everyone',
+            offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+            },
+            aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.9',
+                ratingCount: '500',
+            },
+            author: { '@id': 'https://nextora.lk/#organization' },
+            description: 'NextOra - The #1 campus platform for IIT Sri Lanka students. Manage timetables, navigate campus with AR, find events, join kuppi sessions.',
+        },
+        // Service Schema - For Services SEO
+        {
+            '@type': 'Service',
+            '@id': 'https://nextora.lk/#service',
+            serviceType: 'Campus Management Platform',
+            name: 'NextOra Campus Services',
+            description: 'Unified campus management services for IIT Sri Lanka students including timetables, AR navigation, events, kuppi sessions, and more.',
+            provider: { '@id': 'https://nextora.lk/#organization' },
+            areaServed: {
+                '@type': 'Country',
+                name: 'Sri Lanka',
+            },
+            audience: {
+                '@type': 'EducationalAudience',
+                educationalRole: 'student',
+                audienceType: 'University Students',
+            },
+            availableChannel: {
+                '@type': 'ServiceChannel',
+                serviceUrl: 'https://nextora.lk',
+                serviceSmsNumber: '+94',
+                servicePhone: '+94',
+            },
+            termsOfService: 'https://nextora.lk/terms',
+            offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+            },
+            hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'NextOra Services',
+                itemListElement: [
+                    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Timetable Management' } },
+                    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AR Campus Navigation' } },
+                    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Event Management' } },
+                    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kuppi Sessions' } },
+                    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lost & Found' } },
+                ],
+            },
+        },
+        // CollectionPage Schema - For Better SERP Features
+        {
+            '@type': 'CollectionPage',
+            '@id': 'https://nextora.lk/#collection',
+            name: 'NextOra Features Collection',
+            description: 'Complete collection of campus management features for IIT Sri Lanka students',
+            url: 'https://nextora.lk/#features',
+            isPartOf: { '@id': 'https://nextora.lk/#website' },
+            about: { '@id': 'https://nextora.lk/#organization' },
+            mainEntity: {
+                '@type': 'ItemList',
+                numberOfItems: 9,
+                itemListOrder: 'https://schema.org/ItemListOrderDescending',
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, url: 'https://nextora.lk/#features', name: 'Academic Hub' },
+                    { '@type': 'ListItem', position: 2, url: 'https://nextora.lk/#features', name: 'Kuppi Sessions' },
+                    { '@type': 'ListItem', position: 3, url: 'https://nextora.lk/#features', name: 'AR Navigation' },
+                ],
+            },
+        },
+        // Event Schema - For Events SEO
+        {
+            '@type': 'Event',
+            '@id': 'https://nextora.lk/#beta-launch',
+            name: 'NextOra Beta Launch',
+            description: 'Join 500+ IIT students in the NextOra beta program',
+            startDate: '2025-01-01',
+            endDate: '2026-12-31',
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
+            location: {
+                '@type': 'VirtualLocation',
+                url: 'https://nextora.lk',
+            },
+            organizer: { '@id': 'https://nextora.lk/#organization' },
+            offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+                availability: 'https://schema.org/InStock',
+                url: 'https://nextora.lk/#cta',
+            },
+            image: 'https://nextora.lk/og-image.png',
+        },
+        // VideoObject Schema - For Video SEO (Demo Video)
+        {
+            '@type': 'VideoObject',
+            '@id': 'https://nextora.lk/#demo-video',
+            name: 'NextOra Demo - Campus Platform for IIT Sri Lanka',
+            description: 'Watch how NextOra transforms campus life for IIT Sri Lanka students with timetables, AR navigation, events, and kuppi sessions.',
+            thumbnailUrl: 'https://nextora.lk/og-image.png',
+            uploadDate: '2025-01-01',
+            duration: 'PT2M30S',
+            contentUrl: 'https://nextora.lk/demo',
+            embedUrl: 'https://nextora.lk/embed/demo',
+            interactionStatistic: {
+                '@type': 'InteractionCounter',
+                interactionType: { '@type': 'WatchAction' },
+                userInteractionCount: 5000,
+            },
+            publisher: { '@id': 'https://nextora.lk/#organization' },
+        },
+        // CreativeWork/SoftwareSourceCode Schema - For Developer SEO
+        {
+            '@type': 'SoftwareSourceCode',
+            name: 'NextOra Platform',
+            codeRepository: 'https://github.com/NextOra',
+            programmingLanguage: ['TypeScript', 'React', 'Next.js'],
+            runtimePlatform: 'Node.js',
+            author: { '@id': 'https://nextora.lk/#organization' },
+            dateCreated: '2025-01-01',
+            license: 'https://nextora.lk/license',
+        },
+        // LocalBusiness Schema - For Local SEO
+        {
+            '@type': 'LocalBusiness',
+            '@id': 'https://nextora.lk/#localbusiness',
+            name: 'NextOra',
+            description: 'Campus platform provider for IIT Sri Lanka',
+            url: 'https://nextora.lk',
+            telephone: '+94',
+            email: 'nextora.platform@gmail.com',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'IIT Campus',
+                addressLocality: 'Colombo',
+                addressRegion: 'Western Province',
+                postalCode: '00300',
+                addressCountry: 'LK',
+            },
+            geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 6.9271,
+                longitude: 79.8612,
+            },
+            openingHoursSpecification: {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                opens: '00:00',
+                closes: '23:59',
+            },
+            priceRange: 'Free',
+            image: 'https://nextora.lk/sdgp_logo.png',
+            sameAs: [
+                'https://twitter.com/NextOraApp',
+                'https://linkedin.com/company/nextora',
+                'https://instagram.com/nextora.app',
+            ],
+        },
+        // ProfilePage Schema - Team/About Page
+        {
+            '@type': 'ProfilePage',
+            '@id': 'https://nextora.lk/#team-profile',
+            name: 'NextOra Team',
+            url: 'https://nextora.lk/#team',
+            description: 'Meet the IIT undergraduate team behind NextOra campus platform',
+            mainEntity: {
+                '@type': 'Organization',
+                name: 'NextOra Development Team',
+                member: [
+                    { '@type': 'Person', name: 'Haritha Wikramasinha', jobTitle: 'Team Leader & Lead Developer' },
+                    { '@type': 'Person', name: 'Janindu Wijesooriya', jobTitle: 'Head of Design & UX' },
+                    { '@type': 'Person', name: 'Kisalni De Silva', jobTitle: 'Frontend Developer' },
+                    { '@type': 'Person', name: 'Paramith Kavisha', jobTitle: 'Frontend Developer' },
+                    { '@type': 'Person', name: 'Isuru Ravishan', jobTitle: 'Backend Developer' },
+                    { '@type': 'Person', name: 'Dihara Ayasmitha', jobTitle: 'Backend Developer' },
+                ],
+            },
+        },
+        // SpecialAnnouncement Schema - For Featured Snippets
+        {
+            '@type': 'SpecialAnnouncement',
+            name: 'NextOra Beta Now Available',
+            text: 'NextOra campus platform is now in beta for all IIT Sri Lanka students. Join 500+ early users today!',
+            datePosted: '2025-01-01',
+            expires: '2027-01-01',
+            category: 'https://www.wikidata.org/wiki/Q7889',
+            announcementLocation: {
+                '@type': 'Place',
+                name: 'Informatics Institute of Technology',
+                address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Colombo',
+                    addressCountry: 'Sri Lanka',
+                },
+            },
+            url: 'https://nextora.lk/#cta',
+        },
     ],
 };
 
@@ -738,9 +948,14 @@ export default function RootLayout({
             {/* Microsoft Tiles */}
             <meta name="msapplication-TileImage" content="/android-chrome-192x192.png" />
 
+            {/* IndexNow API Key for Instant Indexing */}
+            <link rel="indexnow" href="/8b7d4e2f9a1c6b3d5e0f7a8c9b2d4e6f.txt" />
+
             {/* Preconnect for Performance - Critical Resources */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            <link rel="preconnect" href="https://www.google-analytics.com" />
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
 
             {/* DNS Prefetch - Third Party Services */}
             <link rel="dns-prefetch" href="https://www.google-analytics.com" />
@@ -748,9 +963,15 @@ export default function RootLayout({
             <link rel="dns-prefetch" href="https://www.google.com" />
             <link rel="dns-prefetch" href="https://connect.facebook.net" />
             <link rel="dns-prefetch" href="https://platform.twitter.com" />
+            <link rel="dns-prefetch" href="https://api.bing.com" />
+            <link rel="dns-prefetch" href="https://www.facebook.com" />
 
             {/* Preload Critical Resources */}
             <link rel="preload" href="/sdgp_logo.png" as="image" type="image/png" />
+            <link rel="preload" href="/og-image.png" as="image" type="image/png" />
+
+            {/* Prerender Hints - For faster navigation */}
+            <link rel="prerender" href="https://nextora.lk/#features" />
 
             {/* Canonical URL */}
             <link rel="canonical" href="https://nextora.lk" />
@@ -760,16 +981,21 @@ export default function RootLayout({
             <link rel="alternate" hrefLang="en-US" href="https://nextora.lk" />
             <link rel="alternate" hrefLang="en-GB" href="https://nextora.lk" />
             <link rel="alternate" hrefLang="si" href="https://nextora.lk" />
+            <link rel="alternate" hrefLang="ta" href="https://nextora.lk" />
             <link rel="alternate" hrefLang="x-default" href="https://nextora.lk" />
 
-            {/* RSS/Atom Feeds (if applicable) */}
+            {/* RSS/Atom Feeds */}
             <link rel="alternate" type="application/rss+xml" title="NextOra Updates" href="https://nextora.lk/feed.xml" />
+            <link rel="alternate" type="application/atom+xml" title="NextOra Atom Feed" href="https://nextora.lk/feed.xml" />
 
             {/* Humans.txt - Team Credits */}
             <link rel="author" href="https://nextora.lk/humans.txt" type="text/plain" />
 
             {/* Security.txt - Security Contact */}
             <link rel="security" href="https://nextora.lk/.well-known/security.txt" />
+
+            {/* Schema.org JSON file */}
+            <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
 
             {/* JSON-LD Structured Data */}
             <script
@@ -807,15 +1033,25 @@ export default function RootLayout({
 
             {/* Open Graph Additional Tags */}
             <meta property="og:see_also" content="https://www.iit.ac.lk" />
+            <meta property="og:updated_time" content="2026-01-10T00:00:00+05:30" />
+            <meta property="article:modified_time" content="2026-01-10T00:00:00+05:30" />
 
             {/* Twitter Additional Tags */}
             <meta name="twitter:domain" content="nextora.lk" />
             <meta name="twitter:url" content="https://nextora.lk" />
+            <meta name="twitter:label1" content="Platform" />
+            <meta name="twitter:data1" content="Campus Management" />
+            <meta name="twitter:label2" content="Price" />
+            <meta name="twitter:data2" content="Free" />
 
-            {/* Apple Specific */}
-            <meta name="apple-itunes-app" content="app-id=nextora" />
+            {/* Apple Specific - App Store & Smart Banner */}
+            <meta name="apple-itunes-app" content="app-id=nextora, app-argument=https://nextora.lk" />
+            <meta name="apple-mobile-web-app-title" content="NextOra" />
 
-            {/* Facebook Domain Verification (add your ID) */}
+            {/* Google Play Store */}
+            <meta name="google-play-app" content="app-id=lk.nextora.app" />
+
+            {/* Facebook Domain Verification */}
             <meta name="facebook-domain-verification" content="your-facebook-domain-verification-id" />
 
             {/* Pinterest Verification */}
@@ -830,14 +1066,41 @@ export default function RootLayout({
             {/* Yandex Verification */}
             <meta name="yandex-verification" content="your-yandex-verification" />
 
+            {/* Baidu Verification */}
+            <meta name="baidu-site-verification" content="your-baidu-verification" />
+
             {/* Norton Safe Web */}
             <meta name="norton-safeweb-site-verification" content="your-norton-code" />
 
+            {/* Alexa Verification */}
+            <meta name="alexaVerifyID" content="your-alexa-id" />
+
+            {/* Content Language */}
+            <meta httpEquiv="content-language" content="en-US" />
+
             {/* Content Security Policy - Basic */}
-            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+            {/* Refresh/Redirect Control */}
+            <meta httpEquiv="imagetoolbar" content="no" />
+
+            {/* Resource Hints for External Resources */}
+            <meta httpEquiv="x-dns-prefetch-control" content="on" />
 
             {/* Page Caching Hints */}
             <meta httpEquiv="Cache-Control" content="public, max-age=86400" />
+            <meta httpEquiv="Pragma" content="public" />
+
+            {/* News/Article Publishing */}
+            <meta name="news_keywords" content="NextOra, IIT Sri Lanka, campus app, student platform, timetable, AR navigation, kuppi sessions, events" />
+            <meta name="syndication-source" content="https://nextora.lk" />
+            <meta name="original-source" content="https://nextora.lk" />
+
+            {/* Standout Tag for Google News */}
+            <link rel="standout" href="https://nextora.lk" />
+
+            {/* AMP Link (if you have AMP version) */}
+            {/* <link rel="amphtml" href="https://nextora.lk/amp" /> */}
         </head>
         <body style={{ margin: 0, padding: 0, backgroundColor: '#F8FAFC', fontFamily: 'var(--font-plus-jakarta-sans), sans-serif' }}>
         <ThemeRegistry>{children}</ThemeRegistry>

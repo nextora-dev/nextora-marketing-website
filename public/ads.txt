@@ -1,0 +1,9 @@
+# NextOra ads.txt - Authorized Digital Sellers
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# Placeholder for future ad networks
+
+# Remove this file or update it if you add advertising
+# This file declares that NextOra does not sell ad inventory
+#
+# https://nextora.lk/ads.txt
+
