@@ -33,6 +33,7 @@ export default function Solution() {
 
   return (
     <SectionWrapper id="solution" background="mesh">
+      {/* SEO: NextOra Solution - Unified Campus Platform for IIT Sri Lanka */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -45,7 +46,7 @@ export default function Solution() {
             display: 'block',
           }}
         >
-          THE SOLUTION
+          UNIFIED CAMPUS PLATFORM
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Your Campus.{' '}
@@ -56,9 +57,9 @@ export default function Solution() {
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
         >
-          One app to replace them all. NextOra brings everything you need into a single, beautiful platform.
+          One app to replace them all. NextOra brings timetables, kuppi sessions, AR navigation, events, and campus services into a single, beautiful platform for IIT Sri Lanka students.
         </Typography>
       </Box>
 

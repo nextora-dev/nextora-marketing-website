@@ -15,6 +15,8 @@ export default function HowItWorks() {
 
   return (
     <SectionWrapper id="how-it-works" background="gradient">
+      {/* SEO: How It Works - Easy Campus Management | NextOra */}
+      {/* Description: Discover how NextOra simplifies campus life for IIT students. One platform for schedules, collaboration, navigation, and staying connected with campus activities. */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -27,7 +29,7 @@ export default function HowItWorks() {
             display: 'block',
           }}
         >
-          HOW IT WORKS
+          EASY CAMPUS MANAGEMENT
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Get Started in{' '}
@@ -38,9 +40,9 @@ export default function HowItWorks() {
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
         >
-          No complicated setup. Just sign in with your IIT credentials and you&apos;re ready to go.
+          Discover how NextOra simplifies campus life for IIT students. One platform for schedules, collaboration, navigation, and staying connected with campus activities.
         </Typography>
       </Box>
 

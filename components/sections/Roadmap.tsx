@@ -36,6 +36,7 @@ export default function Roadmap() {
 
   return (
     <SectionWrapper id="roadmap" background="gradient">
+      {/* SEO: NextOra Roadmap - Upcoming Features for IIT Campus Platform */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -48,7 +49,7 @@ export default function Roadmap() {
             display: 'block',
           }}
         >
-          ROADMAP
+          NEXTORA DEVELOPMENT ROADMAP
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           What&apos;s{' '}
@@ -63,9 +64,9 @@ export default function Roadmap() {
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
         >
-          We&apos;re constantly building new features to make your campus experience even better.
+          We&apos;re constantly building new features — AI chatbot, in-app payments, smart recommendations, and more to enhance your IIT campus experience.
         </Typography>
       </Box>
 

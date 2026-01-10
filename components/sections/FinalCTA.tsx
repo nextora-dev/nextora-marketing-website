@@ -26,6 +26,7 @@ export default function FinalCTA() {
 
   return (
     <SectionWrapper id="cta" background="mesh" paddingY={16}>
+      {/* SEO: Get Started with NextOra - Join IIT Sri Lanka's Campus Platform */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <MotionBox
           initial={{ opacity: 0, y: 30 }}
@@ -44,7 +45,7 @@ export default function FinalCTA() {
               display: 'block',
             }}
           >
-            GET STARTED
+            JOIN NEXTORA TODAY - FREE FOR IIT STUDENTS
           </Typography>
           <Typography variant="h2" component="h2" sx={{ mb: 3 }}>
             Ready to Transform Your{' '}
@@ -55,10 +56,9 @@ export default function FinalCTA() {
           <Typography
             variant="body1"
             component="p"
-            sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+            sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
           >
-            Join thousands of IIT students who are already enjoying a smarter campus life.
-            Be among the first to experience NextOra.
+            Join 500+ IIT Sri Lanka students already using NextOra. Get early access to timetables, kuppi sessions, AR navigation, events, and more — completely free.
           </Typography>
         </MotionBox>
       </Box>

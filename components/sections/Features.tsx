@@ -15,7 +15,8 @@ export default function Features() {
 
   return (
     <SectionWrapper id="features" background="default" paddingY={16}>
-      {/* Hidden SEO text for search engines */}
+      {/* SEO: Features - Complete Campus Management Tools | NextOra */}
+      {/* Description: Explore NextOra's comprehensive features: real-time timetables, kuppi session coordination, AR navigation, event calendar, and seamless campus integration. */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -28,7 +29,7 @@ export default function Features() {
             display: 'block',
           }}
         >
-          FEATURES
+          COMPLETE CAMPUS MANAGEMENT TOOLS
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Everything You Need,{' '}
@@ -39,9 +40,9 @@ export default function Features() {
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
         >
-          NextOra provides powerful campus features designed specifically for IIT Sri Lanka students — timetables, kuppi sessions, AR navigation, events, and more.
+          Explore NextOra&apos;s comprehensive features: real-time timetables, kuppi session coordination, AR navigation, event calendar, and seamless campus integration for IIT Sri Lanka students.
         </Typography>
       </Box>
 

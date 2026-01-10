@@ -16,6 +16,7 @@ export default function Benefits() {
 
   return (
     <SectionWrapper id="benefits" background="default">
+      {/* SEO: Why Choose NextOra - Benefits for IIT Sri Lanka Students */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -28,20 +29,20 @@ export default function Benefits() {
             display: 'block',
           }}
         >
-          WHY CHOOSE US
+          WHY IIT STUDENTS CHOOSE NEXTORA
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Built for{' '}
           <GradientText variant="h2" component="span">
-            Students
+            IIT Students
           </GradientText>
         </Typography>
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
         >
-          More than just an app — it&apos;s a complete ecosystem designed to make your campus life seamless.
+          More than just an app — NextOra is a complete campus ecosystem with smart notifications, verified users, enterprise security, and an all-in-one dashboard for IIT Sri Lanka students.
         </Typography>
       </Box>
 

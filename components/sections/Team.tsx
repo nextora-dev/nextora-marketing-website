@@ -14,6 +14,7 @@ export default function Team() {
 
   return (
     <SectionWrapper id="team" background="mesh">
+      {/* SEO: About NextOra Team - IIT Sri Lanka Developers */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -26,7 +27,7 @@ export default function Team() {
             display: 'block',
           }}
         >
-          OUR TEAM
+          MEET THE NEXTORA DEVELOPMENT TEAM
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Built by{' '}
@@ -35,7 +36,7 @@ export default function Team() {
             component="span"
             gradient={gradients.blueIndigo}
           >
-            Students
+            IIT Students
           </GradientText>
           , for Students
         </Typography>
@@ -44,8 +45,7 @@ export default function Team() {
           component="p"
           sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 700, mx: 'auto', mb: 4, fontSize: '1.1rem' }}
         >
-          We&apos;re a team of IIT undergraduates from the SE-03 group who understand the challenges
-          of campus life. Our mission is to make every student&apos;s journey smoother.
+          We&apos;re a team of IIT Sri Lanka undergraduates from the SE-03 group, developing NextOra as our SDGP project. We understand the challenges of campus life and built this platform to solve them.
         </Typography>
 
         {/* Mission Statement */}

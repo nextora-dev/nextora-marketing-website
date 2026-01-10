@@ -15,6 +15,7 @@ export default function Problem() {
 
   return (
     <SectionWrapper id="problem" background="gradient">
+      {/* SEO: Campus Challenges - Why IIT Students Need NextOra */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -27,7 +28,7 @@ export default function Problem() {
             display: 'block',
           }}
         >
-          THE PROBLEM
+          CAMPUS CHALLENGES IIT STUDENTS FACE
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Sound{' '}
@@ -38,9 +39,9 @@ export default function Problem() {
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
         >
-          Every IIT student knows these struggles. We&apos;ve all been there.
+          Scattered timetables, missed events, confusing campus navigation — every IIT Sri Lanka student knows these struggles. NextOra solves them all.
         </Typography>
       </Box>
 

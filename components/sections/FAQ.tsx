@@ -21,6 +21,7 @@ export default function FAQ() {
 
   return (
     <SectionWrapper id="faq" background="default">
+      {/* SEO: FAQ - NextOra Campus Platform Questions | IIT Sri Lanka */}
       <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
@@ -33,20 +34,20 @@ export default function FAQ() {
             display: 'block',
           }}
         >
-          FAQ
+          FREQUENTLY ASKED QUESTIONS
         </Typography>
         <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
-          Frequently Asked{' '}
+          Questions About{' '}
           <GradientText variant="h2" component="span">
-            Questions
+            NextOra
           </GradientText>
         </Typography>
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 650, mx: 'auto', fontSize: '1.1rem' }}
         >
-          Got questions about NextOra campus platform? Here are the most common queries about our IIT Sri Lanka student app.
+          Everything you need to know about NextOra campus platform — features, security, pricing, and how it helps IIT Sri Lanka students manage campus life.
         </Typography>
       </Box>
 
