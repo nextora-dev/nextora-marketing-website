@@ -105,6 +105,20 @@ const nextConfig: NextConfig = {
       },
       {
         // Manifest caching
+        source: '/site.webmanifest',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/manifest+json',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, s-maxage=604800',
+          },
+        ],
+      },
+      {
+        // Manifest caching (legacy path)
         source: '/manifest.json',
         headers: [
           {
@@ -114,6 +128,20 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=604800, s-maxage=604800',
+          },
+        ],
+      },
+      {
+        // Favicon caching for Google indexing
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, s-maxage=604800',
+          },
+          {
+            key: 'Content-Type',
+            value: 'image/x-icon',
           },
         ],
       },

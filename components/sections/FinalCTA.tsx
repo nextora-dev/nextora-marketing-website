@@ -53,9 +53,9 @@ export default function FinalCTA() {
             </GradientText>
           </Typography>
           <Typography
-            variant="h6"
+            variant="body1"
             component="p"
-            sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
+            sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
           >
             Join thousands of IIT students who are already enjoying a smarter campus life.
             Be among the first to experience NextOra.

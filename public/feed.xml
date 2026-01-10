@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NextOra - Campus Platform Updates</title>
+    <link>https://nextora.lk</link>
+    <description>Latest updates, features, and news from NextOra - the unified campus platform for IIT Sri Lanka students</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jan 2026 00:00:00 +0530</lastBuildDate>
+    <pubDate>Fri, 10 Jan 2026 00:00:00 +0530</pubDate>
+    <ttl>60</ttl>
+    <atom:link href="https://nextora.lk/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <image>
+      <url>https://nextora.lk/sdgp_logo.png</url>
+      <title>NextOra</title>
+      <link>https://nextora.lk</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+
+    <item>
+      <title>NextOra Beta Launch - Join 500+ Early Users</title>
+      <link>https://nextora.lk/#cta</link>
+      <guid isPermaLink="true">https://nextora.lk/updates/beta-launch</guid>
+      <pubDate>Fri, 10 Jan 2026 00:00:00 +0530</pubDate>
+      <dc:creator>NextOra Team</dc:creator>
+      <category>Launch</category>
+      <description>NextOra is now in beta! Join 500+ IIT students who are already experiencing a smarter campus life with our unified platform.</description>
+      <content:encoded><![CDATA[
+        <p>We're excited to announce that NextOra is now in beta! Our unified campus platform brings together everything IIT Sri Lanka students need:</p>
+        <ul>
+          <li>Real-time timetables and exam schedules</li>
+          <li>AR-powered campus navigation</li>
+          <li>Kuppi sessions for peer tutoring</li>
+          <li>Event discovery and ticket booking</li>
+          <li>Lost & found with AI matching</li>
+          <li>And much more!</li>
+        </ul>
+        <p>Sign up now with your IIT credentials at <a href="https://nextora.lk/#cta">nextora.lk</a></p>
+      ]]></content:encoded>
+    </item>
+
+    <item>
+      <title>Introducing AR Campus Navigation</title>
+      <link>https://nextora.lk/#features</link>
+      <guid isPermaLink="true">https://nextora.lk/updates/ar-navigation</guid>
+      <pubDate>Thu, 09 Jan 2026 00:00:00 +0530</pubDate>
+      <dc:creator>NextOra Team</dc:creator>
+      <category>Feature</category>
+      <description>Never get lost on campus again! Our new AR navigation feature helps you find lecture halls, labs, and facilities with augmented reality guidance.</description>
+    </item>
+
+    <item>
+      <title>Kuppi Sessions Now Live</title>
+      <link>https://nextora.lk/#features</link>
+      <guid isPermaLink="true">https://nextora.lk/updates/kuppi-sessions</guid>
+      <pubDate>Wed, 08 Jan 2026 00:00:00 +0530</pubDate>
+      <dc:creator>NextOra Team</dc:creator>
+      <category>Feature</category>
+      <description>Connect with peers for tutoring sessions. Share knowledge, help others, and excel together as a community with our new Kuppi Sessions feature.</description>
+    </item>
+  </channel>
+</rss>
+

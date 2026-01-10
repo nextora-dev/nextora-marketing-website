@@ -150,7 +150,7 @@ export default function Hero() {
 
               {/* SEO-optimized subheading with keywords */}
               <Typography
-                variant="h6"
+                variant="body1"
                 component="p"
                 sx={{
                   color: 'text.secondary',
@@ -158,6 +158,7 @@ export default function Hero() {
                   mb: 4,
                   maxWidth: 500,
                   lineHeight: 1.7,
+                  fontSize: '1.1rem',
                 }}
               >
                   NextOra is the unified campus platform for IIT Sri Lanka students. Access timetables, kuppi sessions, AR navigation, events, and more — everything you need in one place.

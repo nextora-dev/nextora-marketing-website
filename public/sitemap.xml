@@ -2,84 +2,184 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- Homepage -->
+  <!-- ============================================ -->
+  <!-- HOMEPAGE - Highest Priority -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+
+    <!-- Language Alternates -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextora.lk" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://nextora.lk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextora.lk" />
+
+    <!-- Mobile Indication -->
+    <mobile:mobile/>
+
+    <!-- Primary OG Image -->
     <image:image>
       <image:loc>https://nextora.lk/og-image.png</image:loc>
-      <image:title>NextOra - Campus Platform for IIT Sri Lanka</image:title>
-      <image:caption>NextOra unified campus platform interface</image:caption>
+      <image:title>NextOra - #1 Campus Platform for IIT Sri Lanka Students</image:title>
+      <image:caption>NextOra unified campus platform - timetables, AR navigation, events, kuppi sessions for IIT students</image:caption>
+      <image:geo_location>Colombo, Sri Lanka</image:geo_location>
+      <image:license>https://nextora.lk/license</image:license>
+    </image:image>
+
+    <!-- Logo Image -->
+    <image:image>
+      <image:loc>https://nextora.lk/sdgp_logo.png</image:loc>
+      <image:title>NextOra Logo</image:title>
+      <image:caption>NextOra Campus Platform Logo - Education Technology Sri Lanka</image:caption>
+    </image:image>
+
+    <!-- App Screenshot -->
+    <image:image>
+      <image:loc>https://nextora.lk/app-screenshot.png</image:loc>
+      <image:title>NextOra App Dashboard Screenshot</image:title>
+      <image:caption>NextOra mobile app interface showing timetable and campus features</image:caption>
     </image:image>
   </url>
 
-  <!-- Section anchors for better indexing -->
+  <!-- ============================================ -->
+  <!-- FEATURES SECTION - High Priority -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#features</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://nextora.lk/og-image.png</image:loc>
+      <image:title>NextOra Features - Timetables, AR Navigation, Events, Kuppi Sessions</image:title>
+      <image:caption>Comprehensive campus features for IIT Sri Lanka students</image:caption>
+    </image:image>
   </url>
 
+  <!-- ============================================ -->
+  <!-- HOW IT WORKS - High Priority -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#how-it-works</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <mobile:mobile/>
   </url>
 
+  <!-- ============================================ -->
+  <!-- PROBLEM SECTION -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#problem</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.80</priority>
+    <mobile:mobile/>
   </url>
 
+  <!-- ============================================ -->
+  <!-- SOLUTION SECTION -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#solution</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <mobile:mobile/>
   </url>
 
+  <!-- ============================================ -->
+  <!-- BENEFITS SECTION -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#benefits</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.80</priority>
+    <mobile:mobile/>
   </url>
 
+  <!-- ============================================ -->
+  <!-- ROADMAP - Updated Frequently -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#roadmap</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <mobile:mobile/>
   </url>
 
+  <!-- ============================================ -->
+  <!-- TEAM SECTION -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#team</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.75</priority>
+    <mobile:mobile/>
+    <!-- Team Member Images -->
+    <image:image>
+      <image:loc>https://nextora.lk/haritha.png</image:loc>
+      <image:title>Haritha Wikramasinha - NextOra Team Leader</image:title>
+      <image:caption>Team Leader and Lead Developer at NextOra</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextora.lk/janidu.jpg</image:loc>
+      <image:title>Janindu Wijesooriya - NextOra Head of Design</image:title>
+      <image:caption>Head of Design and UX at NextOra</image:caption>
+    </image:image>
   </url>
 
+  <!-- ============================================ -->
+  <!-- FAQ SECTION - High SEO Value -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#faq</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <mobile:mobile/>
   </url>
 
+  <!-- ============================================ -->
+  <!-- CTA / SIGNUP SECTION -->
+  <!-- ============================================ -->
   <url>
     <loc>https://nextora.lk/#cta</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- STATIC ASSETS FOR IMAGE SEARCH -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://nextora.lk/sdgp_logo.png</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+    <image:image>
+      <image:loc>https://nextora.lk/sdgp_logo.png</image:loc>
+      <image:title>NextOra Official Logo</image:title>
+      <image:caption>NextOra - The unified campus platform for IIT Sri Lanka</image:caption>
+    </image:image>
   </url>
 
 </urlset>

@@ -36,9 +36,9 @@ export default function HowItWorks() {
           </GradientText>
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
         >
           No complicated setup. Just sign in with your IIT credentials and you&apos;re ready to go.
         </Typography>

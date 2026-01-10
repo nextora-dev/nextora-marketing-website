@@ -61,9 +61,9 @@ export default function Roadmap() {
           </GradientText>
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
         >
           We&apos;re constantly building new features to make your campus experience even better.
         </Typography>

@@ -36,9 +36,9 @@ export default function Problem() {
           </GradientText>
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
         >
           Every IIT student knows these struggles. We&apos;ve all been there.
         </Typography>

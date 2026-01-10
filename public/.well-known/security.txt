@@ -1,0 +1,16 @@
+# NextOra Security Contact Information
+# https://nextora.lk/.well-known/security.txt
+
+Contact: mailto:nextora.platform@gmail.com
+Expires: 2027-01-10T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://nextora.lk/.well-known/security.txt
+Policy: https://nextora.lk/security-policy
+
+# We take security seriously at NextOra. If you've found a security
+# vulnerability, please report it to us at the email above.
+# We appreciate responsible disclosure and will work with you to
+# address any issues promptly.
+
+# Thanks for helping keep NextOra safe!
+

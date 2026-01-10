@@ -14,9 +14,10 @@ export default function Team() {
 
   return (
     <SectionWrapper id="team" background="mesh">
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Box component="header" sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
           variant="overline"
+          component="span"
           sx={{
             color: colors.indigo.main,
             fontWeight: 600,
@@ -27,7 +28,7 @@ export default function Team() {
         >
           OUR TEAM
         </Typography>
-        <Typography variant="h2" sx={{ mb: 2 }}>
+        <Typography variant="h2" component="h2" sx={{ mb: 2 }}>
           Built by{' '}
           <GradientText
             variant="h2"
@@ -39,9 +40,9 @@ export default function Team() {
           , for Students
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 700, mx: 'auto', mb: 4 }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 700, mx: 'auto', mb: 4, fontSize: '1.1rem' }}
         >
           We&apos;re a team of IIT undergraduates from the SE-03 group who understand the challenges
           of campus life. Our mission is to make every student&apos;s journey smoother.
@@ -60,13 +61,14 @@ export default function Team() {
           }}
         >
           <Typography
-            variant="h6"
+            variant="body1"
             component="blockquote"
             sx={{
               fontStyle: 'italic',
               fontWeight: 400,
               color: 'text.secondary',
               lineHeight: 1.8,
+              fontSize: '1.1rem',
             }}
           >
             &ldquo;To empower every IIT student with technology that simplifies campus life
@@ -121,7 +123,7 @@ export default function Team() {
                           transition: 'all 0.3s ease',
                       }}
                   />
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
+                <Typography variant="h6" component="h3" sx={{ fontWeight: 600, mb: 0.5 }}>
                   {member.name}
                 </Typography>
                 <Typography

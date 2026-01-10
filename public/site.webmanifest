@@ -1,8 +1,18 @@
 {
   "name": "NextOra - Campus Platform for IIT Sri Lanka",
   "short_name": "NextOra",
-  "description": "The unified campus platform for IIT Sri Lanka students",
+  "description": "The unified campus platform for IIT Sri Lanka students. Access timetables, kuppi sessions, AR navigation, events, and more.",
   "icons": [
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -21,6 +31,8 @@
   "display": "standalone",
   "start_url": "/",
   "scope": "/",
-  "orientation": "portrait-primary"
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity"],
+  "lang": "en"
 }
 

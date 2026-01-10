@@ -176,7 +176,7 @@ export default function Footer() {
           {/* Legal Links */}
           <Grid size={{ xs: 6, sm: 3, md: 2 }}>
             <Box component="nav" aria-label="Legal links">
-              <Typography variant="subtitle2" component="h3" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
+              <Typography variant="subtitle1" component="h3" sx={{ fontWeight: 600, mb: 3, color: 'text.primary' }}>
                 Legal
               </Typography>
               <Stack spacing={2}>

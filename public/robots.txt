@@ -1,32 +1,204 @@
-# NextOra Robots.txt
+# NextOra Robots.txt - Optimized for SEO
 # https://nextora.lk
+# Last Updated: 2026-01-10
 
-# Allow all crawlers
+# ===========================================
+# DEFAULT RULES - Allow All Major Crawlers
+# ===========================================
 User-agent: *
-Allow: /
-
-# Specific rules for Google
-User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
 
-# Specific rules for Bing
+# ===========================================
+# GOOGLE - Primary Search Engine
+# ===========================================
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Storebot-Google
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
+# ===========================================
+# BING / MICROSOFT
+# ===========================================
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Specific rules for Google Images
-User-agent: Googlebot-Image
+User-agent: MSNBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: MSNBot-Media
 Allow: /
 
-# Block common non-essential paths (if they exist)
-Disallow: /api/
-Disallow: /_next/static/
-Disallow: /private/
+User-agent: adidxbot
+Allow: /
 
-# Sitemap location
+User-agent: BingPreview
+Allow: /
+
+# ===========================================
+# SOCIAL MEDIA CRAWLERS
+# ===========================================
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# ===========================================
+# OTHER MAJOR SEARCH ENGINES
+# ===========================================
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: Sogou
+Allow: /
+
+User-agent: Yahoo! Slurp
+Allow: /
+
+# ===========================================
+# SEO TOOLS (Allow for Analysis)
+# ===========================================
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 2
+
+User-agent: DotBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: rogerbot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+# ===========================================
+# ARCHIVE BOTS
+# ===========================================
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+# ===========================================
+# BLOCKED PATHS (Common Non-Essential)
+# ===========================================
+# Block API endpoints
+Disallow: /api/
+Disallow: /api/*
+
+# Block Next.js internal paths
+Disallow: /_next/static/
+Disallow: /_next/data/
+
+# Block private/admin paths
+Disallow: /private/
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Block temporary files
+Disallow: /*.json$
+Disallow: /*.xml.gz$
+
+# Block development files
+Disallow: /*.map$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+
+# ===========================================
+# ALLOWED IMPORTANT FILES
+# ===========================================
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /site.webmanifest
+Allow: /favicon.ico
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# ===========================================
+# SITEMAP LOCATIONS
+# ===========================================
 Sitemap: https://nextora.lk/sitemap.xml
 
-# Host
+# ===========================================
+# HOST DECLARATION
+# ===========================================
 Host: https://nextora.lk
+
+# ===========================================
+# CRAWL-DELAY NOTE
+# ===========================================
+# Crawl-delay values (in seconds):
+# - Google: 0.5s (Google ignores this but good practice)
+# - Bing/Other major: 1s
+# - SEO Tools: 2s (to reduce server load)
+# - Low priority: 2s+
 

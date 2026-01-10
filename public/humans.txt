@@ -1,0 +1,55 @@
+/* TEAM */
+
+Team Lead & Lead Developer: Haritha Wikramasinha
+Contact: nextora.platform@gmail.com
+Twitter: @NextOraApp
+From: Colombo, Sri Lanka
+
+Head of Design & UX: Janindu Wijesooriya
+From: Colombo, Sri Lanka
+
+Frontend Developer: Kisalni De Silva
+From: Colombo, Sri Lanka
+
+Frontend Developer: Paramith Kavisha
+From: Colombo, Sri Lanka
+
+Backend Developer: Isuru Ravishan
+From: Colombo, Sri Lanka
+
+Backend Developer: Dihara Ayasmitha
+From: Colombo, Sri Lanka
+
+/* THANKS */
+
+IIT Sri Lanka - Informatics Institute of Technology
+All IIT Students who provided feedback
+Open Source Community
+
+/* SITE */
+
+Last update: 2026/01/10
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: React 19, Next.js 16, Material-UI
+Software: VS Code, GitHub Copilot
+Hosting: Vercel
+
+/* MISSION */
+
+To empower every IIT student with technology that simplifies campus life
+and creates lasting connections.
+
+/* KEYWORDS */
+
+NextOra, IIT Sri Lanka, Campus Platform, Student App, Timetable,
+AR Navigation, Kuppi Sessions, Events, Education Technology,
+Student Portal, University App, Colombo
+
+/* SOCIAL */
+
+Website: https://nextora.lk
+Email: nextora.platform@gmail.com
+Twitter: https://twitter.com/NextOraApp
+LinkedIn: https://linkedin.com/company/nextora
+Instagram: https://instagram.com/nextora.app
+

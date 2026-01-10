@@ -42,9 +42,9 @@ export default function FAQ() {
           </GradientText>
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           component="p"
-          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto' }}
+          sx={{ color: 'text.secondary', fontWeight: 400, maxWidth: 600, mx: 'auto', fontSize: '1.1rem' }}
         >
           Got questions about NextOra campus platform? Here are the most common queries about our IIT Sri Lanka student app.
         </Typography>
@@ -117,7 +117,7 @@ export default function FAQ() {
                 }}
               >
                 <Typography
-                  variant="h6"
+                  variant="subtitle1"
                   component="h3"
                   sx={{
                     fontWeight: 600,
