@@ -55,10 +55,16 @@ export const metadata: Metadata = {
         siteName: 'NextOra',
         images: [
             {
-                url: 'https://nextora.lk/og-image.png',
+                url: '/og-image.png',
                 width: 1200,
                 height: 630,
                 alt: 'NextOra - Unified Campus Platform for IIT Sri Lanka Students',
+            },
+            {
+                url: '/sdgp_logo.png',
+                width: 512,
+                height: 512,
+                alt: 'NextOra Logo',
             },
         ],
         locale: 'en_US',
@@ -70,7 +76,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'NextOra - #1 Campus Platform for IIT Sri Lanka',
         description: 'The ultimate unified platform for IIT Sri Lanka students. Timetables, kuppi sessions, AR navigation, events & more!',
-        images: ['https://nextora.lk/twitter-image.png'],
+        images: ['/og-image.png', '/sdgp_logo.png'],
         creator: '@NextOraApp',
         site: '@NextOraApp',
     },

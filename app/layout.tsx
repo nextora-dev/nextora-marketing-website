@@ -174,10 +174,17 @@ export const metadata: Metadata = {
                 type: 'image/png',
             },
             {
+                url: '/sdgp_logo.png',
+                width: 512,
+                height: 512,
+                alt: 'NextOra Logo',
+                type: 'image/png',
+            },
+            {
                 url: '/og-image-square.png',
                 width: 600,
                 height: 600,
-                alt: 'NextOra Logo',
+                alt: 'NextOra Logo Square',
                 type: 'image/png',
             }
         ],
@@ -190,7 +197,7 @@ export const metadata: Metadata = {
         creator: '@NextOraApp',
         title: 'NextOra - #1 Campus Platform for IIT Sri Lanka',
         description: 'The unified campus platform for IIT students. Timetable, events, navigation, kuppi sessions & more!',
-        images: ['/twitter-image.png'],
+        images: ['/og-image.png', '/sdgp_logo.png'],
     },
 
     // App Links
@@ -966,12 +973,8 @@ export default function RootLayout({
             <link rel="dns-prefetch" href="https://api.bing.com" />
             <link rel="dns-prefetch" href="https://www.facebook.com" />
 
-            {/* Preload Critical Resources */}
-            <link rel="preload" href="/sdgp_logo.png" as="image" type="image/png" />
-            <link rel="preload" href="/og-image.png" as="image" type="image/png" />
-
-            {/* Prerender Hints - For faster navigation */}
-            <link rel="prerender" href="https://nextora.lk/#features" />
+            {/* Note: Removed preload for og-image.png and sdgp_logo.png to avoid browser warnings */}
+            {/* These images are used for social sharing, not immediate page rendering */}
 
             {/* Canonical URL */}
             <link rel="canonical" href="https://nextora.lk" />
