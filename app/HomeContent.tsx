@@ -46,6 +46,7 @@ export default function HomeContent() {
             component="main"
             role="main"
             aria-label="NextOra Campus Platform Homepage"
+            suppressHydrationWarning
             sx={{
                 minHeight: '100vh',
                 background: colors.background,

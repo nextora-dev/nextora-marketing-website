@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   AppBar,
   Box,
@@ -28,11 +28,20 @@ const navItems = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  const trigger = useScrollTrigger({
+  // Ensure component is mounted before using scroll trigger to prevent hydration mismatch
+  useEffect(() => {
+    requestAnimationFrame(() => setMounted(true));
+  }, []);
+
+  const scrollTrigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 50,
   });
+
+  // Use false on server-side, actual value on client after mounting
+  const trigger = mounted ? scrollTrigger : false;
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

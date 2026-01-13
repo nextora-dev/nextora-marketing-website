@@ -24,9 +24,8 @@ export default function Hero() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        // Delay background animations to prioritize LCP
-        const timer = setTimeout(() => setMounted(true), 100);
-        return () => clearTimeout(timer);
+        // Set mounted state immediately to prevent hydration mismatch
+        requestAnimationFrame(() => setMounted(true));
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -45,6 +44,7 @@ export default function Hero() {
     return (
         <Box
             component="section"
+            suppressHydrationWarning
             sx={{
                 minHeight: '100vh',
                 display: 'flex',

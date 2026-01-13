@@ -1105,7 +1105,7 @@ export default function RootLayout({
             {/* AMP Link (if you have AMP version) */}
             {/* <link rel="amphtml" href="https://nextora.lk/amp" /> */}
         </head>
-        <body style={{ margin: 0, padding: 0, backgroundColor: '#F8FAFC', fontFamily: 'var(--font-plus-jakarta-sans), sans-serif' }}>
+        <body suppressHydrationWarning style={{ margin: 0, padding: 0, backgroundColor: '#F8FAFC', fontFamily: 'var(--font-plus-jakarta-sans), sans-serif' }}>
         <ThemeRegistry>{children}</ThemeRegistry>
         </body>
         </html>
