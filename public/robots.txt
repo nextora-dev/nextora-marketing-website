@@ -7,7 +7,6 @@
 # ===========================================
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
 # ===========================================
 # GOOGLE - Primary Search Engine
@@ -201,4 +200,3 @@ Host: https://nextora.lk
 # - Bing/Other major: 1s
 # - SEO Tools: 2s (to reduce server load)
 # - Low priority: 2s+
-
