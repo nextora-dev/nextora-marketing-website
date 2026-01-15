@@ -320,19 +320,19 @@ export const teamMembers: TeamMember[] = [
 
 export const footerLinks = {
   product: [
-    { label: 'Features', href: '#features' },
-    { label: 'Roadmap', href: '#roadmap' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Features', href: '/features' },
+    { label: 'Roadmap', href: '/roadmap' },
+    { label: 'FAQ', href: '/faq' },
   ],
   company: [
-    { label: 'About Us', href: '#team' },
-    { label: 'Our Team', href: '#team' },
+    { label: 'About Us', href: '/team' },
+    { label: 'Our Team', href: '/team' },
     { label: 'Contact', href: 'mailto:nextora.platform@gmail.com' },
   ],
   resources: [
-    { label: 'Documentation', href: '#' },
+    { label: 'How It Works', href: '/how-it-works' },
     { label: 'Support', href: 'mailto:nextora.platform@gmail.com' },
-    { label: 'Community', href: '#' },
+    { label: 'Benefits', href: '/benefits' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '#' },

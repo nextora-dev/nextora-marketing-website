@@ -4,6 +4,7 @@ import { Box, Container, Grid, Typography, Stack, IconButton, Divider } from '@m
 import { LinkedIn, Instagram, Email } from '@mui/icons-material';
 import { footerLinks } from '@/data/content';
 import Image from "next/image";
+import Link from "next/link";
 import { alpha } from '@mui/material/styles';
 import { colors } from '@/theme/colors';
 
@@ -152,22 +153,36 @@ export default function Footer() {
               </Typography>
               <Stack spacing={2}>
                 {footerLinks.resources.map((link) => (
-                  <Typography
-                    key={link.label}
-                    component="a"
-                    href={link.href}
-                    variant="body2"
-                    sx={{
-                      color: 'text.secondary',
-                      textDecoration: 'none',
-                      transition: 'color 0.2s ease',
-                      '&:hover': {
-                        color: colors.primary.main,
-                      },
-                    }}
-                  >
-                    {link.label}
-                  </Typography>
+                  link.href.startsWith('mailto:') ? (
+                    <Typography
+                      key={link.label}
+                      component="a"
+                      href={link.href}
+                      variant="body2"
+                      sx={{
+                        color: 'text.secondary',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s ease',
+                        '&:hover': {
+                          color: colors.primary.main,
+                        },
+                      }}
+                    >
+                      {link.label}
+                    </Typography>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      style={{
+                        color: colors.text.secondary,
+                        textDecoration: 'none',
+                        fontSize: '0.875rem',
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </Stack>
             </Box>

@@ -17,18 +17,22 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { alpha } from '@mui/material/styles';
 import { colors } from '@/theme/colors';
 
 const navItems = [
-  { label: 'Features', href: '#features' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Features', href: '/features', anchor: '#features' },
+  { label: 'How It Works', href: '/how-it-works', anchor: '#how-it-works' },
+  { label: 'FAQ', href: '/faq', anchor: '#faq' },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   // Ensure component is mounted before using scroll trigger to prevent hydration mismatch
   useEffect(() => {
@@ -47,10 +51,18 @@ export default function Navbar() {
     setMobileOpen(!mobileOpen);
   };
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+  const scrollToSection = (anchor: string) => {
+    const element = document.querySelector(anchor);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileOpen(false);
+  };
+
+  const handleNavClick = (item: typeof navItems[0], e: React.MouseEvent) => {
+    if (isHomePage) {
+      e.preventDefault();
+      scrollToSection(item.anchor);
     }
     setMobileOpen(false);
   };
@@ -78,13 +90,12 @@ export default function Navbar() {
       >
         <Container maxWidth="lg">
           <Toolbar sx={{ justifyContent: 'space-between', py: 1.5 }} disableGutters>
-            <Box
-              component="a"
-              href="#"
-              sx={{
+            <Link
+              href="/"
+              style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 1,
+                gap: 8,
                 textDecoration: 'none',
               }}
             >
@@ -112,43 +123,41 @@ export default function Navbar() {
                         priority
                     />
                 </Box>
-            </Box>
+            </Link>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
               {navItems.map((item) => (
-                <Box
+                <Link
                   key={item.label}
-                  component="button"
-                  onClick={() => scrollToSection(item.href)}
-                  sx={{
-                    color: colors.text.secondary,
-                    background: 'transparent',
-                    border: 'none',
+                  href={isHomePage ? item.anchor : item.href}
+                  onClick={(e) => handleNavClick(item, e)}
+                  style={{
+                    color: pathname === item.href ? colors.primary.main : colors.text.secondary,
+                    background: pathname === item.href ? alpha(colors.primary.main, 0.08) : 'transparent',
+                    textDecoration: 'none',
                     fontSize: '0.9rem',
                     fontWeight: 500,
-                    cursor: 'pointer',
                     padding: '8px 16px',
-                    borderRadius: 2,
+                    borderRadius: 8,
                     transition: 'all 0.2s ease',
-                    '&:hover': {
-                      color: colors.text.primary,
-                      background: alpha(colors.primary.main, 0.08),
-                    },
-                    '&:focus-visible': {
-                      outline: `3px solid ${colors.primary.light}`,
-                      outlineOffset: 2,
-                    },
                   }}
                 >
                   {item.label}
-                </Box>
+                </Link>
               ))}
               <Button
                 variant="contained"
                 color="primary"
                 size="small"
                 sx={{ ml: 2 }}
-                onClick={() => scrollToSection('#cta')}
+                component={Link}
+                href={isHomePage ? '#cta' : '/'}
+                onClick={(e: React.MouseEvent) => {
+                  if (isHomePage) {
+                    e.preventDefault();
+                    scrollToSection('#cta');
+                  }
+                }}
               >
                 Get Early Access
               </Button>
@@ -208,29 +217,33 @@ export default function Navbar() {
               <List>
                 {navItems.map((item) => (
                   <ListItem key={item.label} disablePadding>
-                      <ListItemButton
-                        onClick={() => scrollToSection(item.href)}
-                        sx={{
-                          py: 2,
-                          borderRadius: 2,
-                          '&:hover': {
-                            background: alpha(colors.primary.main, 0.08),
+                    <ListItemButton
+                      component={Link}
+                      href={isHomePage ? item.anchor : item.href}
+                      onClick={(e: React.MouseEvent) => handleNavClick(item, e)}
+                      sx={{
+                        py: 2,
+                        borderRadius: 2,
+                        backgroundColor: pathname === item.href ? alpha(colors.primary.main, 0.08) : 'transparent',
+                        '&:hover': {
+                          background: alpha(colors.primary.main, 0.08),
+                        },
+                      }}
+                    >
+                      <ListItemText
+                        primary={item.label}
+                        slotProps={{
+                          primary: {
+                            sx: {
+                              fontSize: '1.25rem',
+                              fontWeight: 500,
+                              color: pathname === item.href ? colors.primary.main : 'inherit',
+                            },
                           },
                         }}
-                      >
-                        <ListItemText
-                          primary={item.label}
-                          slotProps={{
-                            primary: {
-                              sx: {
-                                fontSize: '1.25rem',
-                                fontWeight: 500,
-                              },
-                            },
-                          }}
-                        />
-                      </ListItemButton>
-                    </ListItem>
+                      />
+                    </ListItemButton>
+                  </ListItem>
                 ))}
               </List>
               <Box>
@@ -240,7 +253,9 @@ export default function Navbar() {
                   color="primary"
                   size="large"
                   sx={{ mt: 4 }}
-                  onClick={() => scrollToSection('#cta')}
+                  component={Link}
+                  href={isHomePage ? '/#cta' : '/'}
+                  onClick={isHomePage ? (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('#cta'); } : () => setMobileOpen(false)}
                 >
                   Get Early Access
                 </Button>
