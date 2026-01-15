@@ -12,6 +12,21 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
+      - name: Clean up disk space
+        run: |
+          # Clean old runner logs
+          sudo rm -rf /home/ubuntu/actions-runner/_diag/*.log || true
+          # Clean Docker unused images, containers, volumes
+          sudo docker system prune -af --volumes || true
+          # Clean old work directories
+          sudo rm -rf /home/ubuntu/actions-runner/_work/_temp/* || true
+          # Clean apt cache
+          sudo apt-get clean || true
+          # Clean journal logs
+          sudo journalctl --vacuum-time=1d || true
+          # Show disk space
+          df -h
+
       - name: Pull latest image
         run: sudo docker pull haritha564/nextora:latest
 
@@ -25,3 +40,10 @@ jobs:
             --restart unless-stopped \
             --name nextora \
             haritha564/nextora:latest
+
+      - name: Post-deploy cleanup
+        if: always()
+        run: |
+          # Remove dangling images after deployment
+          sudo docker image prune -f || true
+
