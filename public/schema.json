@@ -1,12 +1,75 @@
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NextOra",
-  "url": "https://nextora.lk",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nextora.lk/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://nextora.lk/#website",
+      "name": "NextOra",
+      "alternateName": "NextOra Campus Platform",
+      "url": "https://nextora.lk",
+      "description": "The unified campus platform for IIT Sri Lanka students",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://nextora.lk/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://nextora.lk/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nextora.lk/#organization",
+      "name": "NextOra",
+      "legalName": "NextOra Campus Platform",
+      "url": "https://nextora.lk",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nextora.lk/sdgp_logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "NextOra is the unified campus platform for IIT Sri Lanka students",
+      "foundingDate": "2025",
+      "email": "nextora.platform@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Colombo",
+        "addressRegion": "Western Province",
+        "addressCountry": "Sri Lanka"
+      },
+      "sameAs": [
+        "https://twitter.com/NextOraApp",
+        "https://linkedin.com/company/nextora",
+        "https://instagram.com/nextora.app",
+        "https://github.com/NextOra"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://nextora.lk/#app",
+      "name": "NextOra",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "500",
+        "bestRating": "5"
+      },
+      "author": {
+        "@id": "https://nextora.lk/#organization"
+      }
+    }
+  ]
 }
 

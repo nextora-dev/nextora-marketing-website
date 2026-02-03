@@ -28,7 +28,7 @@ Open Source Community
 
 /* SITE */
 
-Last update: 2026/01/10
+Last update: 2026/02/03
 Standards: HTML5, CSS3, JavaScript ES6+
 Components: React 19, Next.js 16, Material-UI
 Software: VS Code, GitHub Copilot

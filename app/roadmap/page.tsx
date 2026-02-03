@@ -23,9 +23,37 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Roadmap - NextOra Campus Platform',
-    description: 'See what\'s coming next to NextOra campus platform.',
+    description: 'See what\'s coming next to NextOra - upcoming features, planned improvements, and the future of campus management.',
     url: 'https://nextora.lk/roadmap',
+    siteName: 'NextOra',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'NextOra Roadmap - Development Timeline',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Roadmap - NextOra Campus Platform',
+    description: 'See what\'s coming next to NextOra campus platform.',
+    images: ['/og-image.png'],
+    creator: '@NextOraApp',
+    site: '@NextOraApp',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

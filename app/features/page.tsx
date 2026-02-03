@@ -24,9 +24,37 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Features - NextOra Campus Platform',
-    description: 'Explore NextOra\'s comprehensive features for IIT Sri Lanka students.',
+    description: 'Explore NextOra\'s comprehensive features: real-time timetables, AR navigation, kuppi sessions, events, and more for IIT Sri Lanka students.',
     url: 'https://nextora.lk/features',
+    siteName: 'NextOra',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'NextOra Features - Campus Management Tools',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Features - NextOra Campus Platform',
+    description: 'Explore NextOra\'s comprehensive features for IIT Sri Lanka students.',
+    images: ['/og-image.png'],
+    creator: '@NextOraApp',
+    site: '@NextOraApp',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

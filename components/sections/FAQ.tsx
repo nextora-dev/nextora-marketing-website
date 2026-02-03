@@ -54,13 +54,14 @@ export default function FAQ() {
       <Box component="section" aria-label="Frequently Asked Questions about NextOra" sx={{ maxWidth: 800, mx: 'auto' }}>
         {faqs.map((faq, index) => (
           <MotionBox
-            key={index}
+            key={`faq-item-${index}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
             <Accordion
+              id={`faq-accordion-${index}`}
               expanded={expanded === `panel${index}`}
               onChange={handleChange(`panel${index}`)}
               sx={{

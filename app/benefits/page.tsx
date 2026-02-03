@@ -23,9 +23,37 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Benefits - NextOra Campus Platform',
-    description: 'Discover why thousands of IIT students choose NextOra.',
+    description: 'Discover why thousands of IIT students choose NextOra - save time, stay organized, never miss events, and connect with your campus community.',
     url: 'https://nextora.lk/benefits',
+    siteName: 'NextOra',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'NextOra Benefits - Why Choose NextOra',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Benefits - NextOra Campus Platform',
+    description: 'Discover why thousands of IIT students choose NextOra.',
+    images: ['/og-image.png'],
+    creator: '@NextOraApp',
+    site: '@NextOraApp',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
