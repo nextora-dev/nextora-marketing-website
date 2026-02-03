@@ -114,7 +114,7 @@ const homePageJsonLd = {
         url: 'https://nextora.lk/og-image.png',
     },
     datePublished: '2025-01-01',
-    dateModified: '2026-01-10',
+    dateModified: '2026-02-03',
     inLanguage: 'en-US',
     potentialAction: [
         {

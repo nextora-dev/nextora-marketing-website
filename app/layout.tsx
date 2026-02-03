@@ -423,7 +423,7 @@ const jsonLd = {
             description: 'The unified campus platform for IIT Sri Lanka students',
             publisher: { '@id': 'https://nextora.lk/#organization' },
             inLanguage: 'en-US',
-            copyrightYear: 2025,
+            copyrightYear: 2026,
             copyrightHolder: { '@id': 'https://nextora.lk/#organization' },
             potentialAction: [
                 {
@@ -446,7 +446,7 @@ const jsonLd = {
             isPartOf: { '@id': 'https://nextora.lk/#website' },
             about: { '@id': 'https://nextora.lk/#organization' },
             datePublished: '2025-01-01',
-            dateModified: '2026-01-10',
+            dateModified: '2026-02-03',
             inLanguage: 'en-US',
             primaryImageOfPage: {
                 '@type': 'ImageObject',
@@ -1023,7 +1023,7 @@ export default function RootLayout({
             <meta name="DC.description" content="The unified campus platform for IIT Sri Lanka students - timetables, events, AR navigation, kuppi sessions, and more" />
             <meta name="DC.publisher" content="NextOra" />
             <meta name="DC.contributor" content="Haritha Wikramasinha, Janindu Wijesooriya" />
-            <meta name="DC.date" content="2025-01-01" />
+            <meta name="DC.date" content="2026-02-03" />
             <meta name="DC.type" content="Software" />
             <meta name="DC.format" content="text/html" />
             <meta name="DC.identifier" content="https://nextora.lk" />
@@ -1035,8 +1035,8 @@ export default function RootLayout({
 
             {/* Open Graph Additional Tags */}
             <meta property="og:see_also" content="https://www.iit.ac.lk" />
-            <meta property="og:updated_time" content="2026-01-10T00:00:00+05:30" />
-            <meta property="article:modified_time" content="2026-01-10T00:00:00+05:30" />
+            <meta property="og:updated_time" content="2026-02-03T00:00:00+05:30" />
+            <meta property="article:modified_time" content="2026-02-03T00:00:00+05:30" />
 
             {/* Twitter Additional Tags */}
             <meta name="twitter:domain" content="nextora.lk" />

@@ -24,9 +24,37 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'FAQ - NextOra Campus Platform',
-    description: 'Find answers to frequently asked questions about NextOra.',
+    description: 'Find answers to frequently asked questions about NextOra — features, security, pricing, and how it helps IIT Sri Lanka students.',
     url: 'https://nextora.lk/faq',
+    siteName: 'NextOra',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'NextOra FAQ - Frequently Asked Questions',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ - NextOra Campus Platform',
+    description: 'Find answers to frequently asked questions about NextOra.',
+    images: ['/og-image.png'],
+    creator: '@NextOraApp',
+    site: '@NextOraApp',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

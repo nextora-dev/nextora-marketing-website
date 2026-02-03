@@ -23,9 +23,37 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'How It Works - NextOra Campus Platform',
-    description: 'Learn how NextOra simplifies campus life for IIT students.',
+    description: 'Discover how NextOra simplifies campus life for IIT students with easy-to-follow steps.',
     url: 'https://nextora.lk/how-it-works',
+    siteName: 'NextOra',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'How NextOra Works - Easy Campus Management',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How It Works - NextOra Campus Platform',
+    description: 'Learn how NextOra simplifies campus life for IIT students.',
+    images: ['/og-image.png'],
+    creator: '@NextOraApp',
+    site: '@NextOraApp',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

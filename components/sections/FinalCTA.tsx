@@ -121,6 +121,7 @@ export default function FinalCTA() {
               ) : (
                 <Box component="form" onSubmit={handleSubmit} sx={{ flex: 1 }}>
                   <TextField
+                    id="cta-email-input"
                     fullWidth
                     placeholder="Enter your IIT email"
                     value={email}

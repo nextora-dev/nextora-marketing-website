@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nextora.lk'
-  const lastModified = new Date('2026-01-15')
+  const lastModified = new Date('2026-02-03')
 
   return [
     // Homepage - Highest Priority
