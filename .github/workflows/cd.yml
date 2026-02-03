@@ -12,6 +12,25 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
+      - name: Check required secrets
+        run: |
+          if [ -z "${{ secrets.SERVER_HOST }}" ]; then
+            echo "❌ ERROR: SERVER_HOST secret is not set!"
+            echo "Please add SERVER_HOST to your repository secrets."
+            exit 1
+          fi
+          if [ -z "${{ secrets.SERVER_USER }}" ]; then
+            echo "❌ ERROR: SERVER_USER secret is not set!"
+            echo "Please add SERVER_USER to your repository secrets."
+            exit 1
+          fi
+          if [ -z "${{ secrets.SERVER_SSH_KEY }}" ]; then
+            echo "❌ ERROR: SERVER_SSH_KEY secret is not set!"
+            echo "Please add SERVER_SSH_KEY to your repository secrets."
+            exit 1
+          fi
+          echo "✅ All required secrets are configured"
+
       - name: Deploy to Server via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -20,13 +39,18 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_PORT || 22 }}
           script: |
+            echo "🚀 Starting deployment..."
+            
             # Pull latest image
+            echo "📥 Pulling latest Docker image..."
             sudo docker pull haritha564/nextora:latest
             
             # Remove old container
+            echo "🗑️ Removing old container..."
             sudo docker rm -f nextora || true
             
             # Run container
+            echo "🐳 Starting new container..."
             sudo docker run -d \
               -p 127.0.0.1:3000:3000 \
               --restart unless-stopped \
@@ -34,4 +58,6 @@ jobs:
               haritha564/nextora:latest
             
             # Verify container is running
+            echo "✅ Verifying deployment..."
             sudo docker ps | grep nextora
+            echo "🎉 Deployment completed successfully!"
