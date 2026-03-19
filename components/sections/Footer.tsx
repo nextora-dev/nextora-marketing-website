@@ -231,7 +231,7 @@ export default function Footer() {
             © {new Date().getFullYear()} NextOra - The #1 Campus Platform for IIT Sri Lanka Students. All rights reserved.
           </Typography>
           <Stack direction="row" spacing={1} alignItems="center">
-            <Email sx={{ fontSize: 18, color: 'text.secondary' }} aria-hidden="true" />
+            <EmailIcon sx={{ fontSize: 18, color: 'text.secondary' }} aria-hidden="true" />
             <Typography
               component="a"
               href="mailto:nextora.platform@gmail.com"

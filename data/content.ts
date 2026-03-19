@@ -69,32 +69,32 @@ export interface TeamMember {
 
 export const problems: Problem[] = [
   {
-    icon: School,
+    icon: SchoolIcon,
     title: 'Missing Timetable Updates',
     description: 'Last-minute changes leave you stranded at wrong lecture halls.',
   },
   {
-    icon: Campaign,
+    icon: CampaignIcon,
     title: 'Scattered WhatsApp Groups',
     description: '50+ groups with important info buried under memes and spam.',
   },
   {
-    icon: Map,
+    icon: MapIcon,
     title: 'Lost in Campus',
     description: 'New buildings, hidden rooms, and no proper navigation system.',
   },
   {
-    icon: ConfirmationNumber,
+    icon: ConfirmationNumberIcon,
     title: 'Event Ticket Chaos',
     description: 'Missing out on events because tickets sold out before you knew.',
   },
   {
-    icon: Inventory2,
+    icon: Inventory2Icon,
     title: 'Lost & Found Nightmare',
     description: 'No centralized system to report or find lost items on campus.',
   },
   {
-    icon: Notifications,
+    icon: NotificationsIcon,
     title: 'No Centralized Notifications',
     description: 'Important announcements lost across multiple platforms.',
   },
@@ -102,63 +102,63 @@ export const problems: Problem[] = [
 
 export const features: Feature[] = [
   {
-    icon: School,
+    icon: SchoolIcon,
     title: 'Academic Hub',
     description: 'Access timetables, exam schedules, results, and academic resources in one place. Never miss a lecture or deadline again.',
     color: colors.primary.main,
     gradient: gradients.bluePrimary,
   },
   {
-    icon: MenuBook,
+    icon: MenuBookIcon,
     title: 'Kuppi Sessions',
     description: 'Find and join peer tutoring sessions. Share knowledge, help others, and excel together as a community.',
     color: colors.indigo.main,
     gradient: gradients.indigoAccent,
   },
   {
-    icon: Map,
+    icon: MapIcon,
     title: 'Campus Navigation',
     description: 'Indoor and outdoor maps with AR navigation. Find lecture halls, labs, cafeterias, and more with ease.',
     color: colors.sky.main,
     gradient: gradients.skyBlue,
   },
   {
-    icon: ConfirmationNumber,
+    icon: ConfirmationNumberIcon,
     title: 'Events & Tickets',
     description: 'Discover campus events, purchase tickets, and manage your event calendar. QR-based entry for seamless access.',
     color: colors.cyan.main,
     gradient: gradients.cyanAccent,
   },
   {
-    icon: HowToVote,
+    icon: HowToVoteIcon,
     title: 'Student Elections',
     description: 'Participate in transparent, secure digital elections. View candidates, manifestos, and cast your vote securely.',
     color: colors.indigo.accent,
     gradient: gradients.blueIndigo,
   },
   {
-    icon: Inventory2,
+    icon: Inventory2Icon,
     title: 'Lost & Found',
     description: 'Report lost items or found belongings. AI-powered matching to reunite students with their possessions.',
     color: colors.indigo.main,
     gradient: gradients.indigoAccent,
   },
   {
-    icon: Person,
+    icon: PersonIcon,
     title: 'Lecturer Connect',
     description: 'Book consultations, view availability, and communicate directly with lecturers through a unified platform.',
     color: colors.sky.main,
     gradient: gradients.skyBlue,
   },
   {
-    icon: Home,
+    icon: HomeIcon,
     title: 'Student Resources',
     description: 'Access library catalogs, study materials, and campus facilities information anytime, anywhere.',
     color: colors.success.main,
     gradient: gradients.success,
   },
   {
-    icon: Campaign,
+    icon: CampaignIcon,
     title: 'SRU Portal',
     description: 'Stay connected with Student Representative Union. View announcements, initiatives, and participate in discussions.',
     color: colors.primary.main,
@@ -171,47 +171,47 @@ export const howItWorks: Step[] = [
     step: 1,
     title: 'Sign In with IIT Credentials',
     description: 'Use your official IIT email and password for secure, verified access.',
-    icon: Login,
+    icon: LoginIcon,
   },
   {
     step: 2,
     title: 'Personalize Your Dashboard',
     description: 'Choose your batch, courses, and interests to get a tailored experience.',
-    icon: Dashboard,
+    icon: DashboardIcon,
   },
   {
     step: 3,
     title: 'Get Real-Time Updates',
     description: 'Receive instant notifications for timetable changes, events, and announcements.',
-    icon: Notifications,
+    icon: NotificationsIcon,
   },
   {
     step: 4,
     title: 'Access Services Instantly',
     description: 'Navigate campus, book sessions, find resources—all from one unified platform.',
-    icon: School,
+    icon: SchoolIcon,
   },
 ];
 
 export const benefits: Benefit[] = [
   {
-    icon: Notifications,
+    icon: NotificationsIcon,
     title: 'Smart Notifications',
     description: 'AI-powered alerts that know what matters to you. No spam, just relevant updates.',
   },
   {
-    icon: VerifiedUser,
+    icon: VerifiedUserIcon,
     title: 'Verified Users',
     description: 'Only IIT students and staff. A trusted community with real identities.',
   },
 
   {
-    icon: Security,
+    icon: SecurityIcon,
     title: 'Secure Platform',
     description: 'Enterprise-grade security with OAuth2, JWT, and end-to-end encryption.',
   },
   {
-    icon: Dashboard,
+    icon: DashboardIcon,
     title: 'All-in-One',
     description: 'Everything you need in one glance. No more app-hopping or tab-switching.',
   },
@@ -221,25 +221,25 @@ export const roadmap: RoadmapItem[] = [
   {
     title: 'AI Campus Assistant',
     description: 'ChatGPT-powered assistant to answer all your campus queries instantly.',
-    icon: SmartToy,
+    icon: SmartToyIcon,
     status: 'in-progress',
   },
   {
     title: 'In-App Secure Payments',
     description: 'Pay for events, canteen, and services directly through the app.',
-    icon: Payment,
+    icon: PaymentIcon,
     status: 'upcoming',
   },
   {
     title: 'Smart Recommendations',
     description: 'Personalized suggestions for events, kuppi sessions, and resources.',
-    icon: Psychology,
+    icon: PsychologyIcon,
     status: 'upcoming',
   },
   {
     title: 'Analytics Dashboard',
     description: 'Track your academic progress, attendance, and engagement metrics.',
-    icon: Analytics,
+    icon: AnalyticsIcon,
     status: 'upcoming',
   },
 ];

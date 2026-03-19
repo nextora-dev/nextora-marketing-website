@@ -128,11 +128,12 @@ export default function FinalCTA() {
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     required
+                    disabled={loading}
                     slotProps={{
                       input: {
                         startAdornment: (
                           <InputAdornment position="start">
-                            <Email sx={{ color: colors.grey[400] }} />
+                            <EmailIcon sx={{ color: colors.grey[400] }} />
                           </InputAdornment>
                         ),
                       },

@@ -104,9 +104,9 @@ export default function FAQ() {
                     }}
                   >
                     {expanded === `panel${index}` ? (
-                      <Remove sx={{ fontSize: 18, color: 'white' }} />
+                      <RemoveIcon sx={{ fontSize: 18, color: 'white' }} />
                     ) : (
-                      <Add sx={{ fontSize: 18, color: colors.primary.main }} />
+                      <AddIcon sx={{ fontSize: 18, color: colors.primary.main }} />
                     )}
                   </Box>
                 }
