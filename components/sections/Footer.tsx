@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Container, Grid, Typography, Stack, IconButton, Divider } from '@mui/material';
-import { LinkedIn, Instagram, Email } from '@mui/icons-material';
+import { LinkedIn, Instagram, Email as EmailIcon } from '@mui/icons-material';
 import { footerLinks } from '@/data/content';
 import Image from "next/image";
 import Link from "next/link";

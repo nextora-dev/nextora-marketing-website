@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Box, Grid, Typography, TextField, Button, InputAdornment } from '@mui/material';
-import { Email } from '@mui/icons-material';
+import { Email as EmailIcon } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
@@ -128,7 +128,6 @@ export default function FinalCTA() {
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     required
-                    disabled={loading}
                     slotProps={{
                       input: {
                         startAdornment: (
