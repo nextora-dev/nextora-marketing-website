@@ -1,7 +1,9 @@
 'use client';
 
 import { Box, Grid, Stack, Typography } from '@mui/material';
-import { Check, Close, ArrowForward } from '@mui/icons-material';
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { motion } from 'framer-motion';
 import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
@@ -125,7 +127,7 @@ export default function Solution() {
                         flexShrink: 0,
                       }}
                     >
-                      <Close sx={{ fontSize: 14, color: colors.error.main }} />
+                      <CloseIcon sx={{ fontSize: 14, color: colors.error.main }} />
                     </Box>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                       {item}
@@ -159,7 +161,7 @@ export default function Solution() {
                 my: { xs: 2, md: 0 },
               }}
             >
-              <ArrowForward sx={{ fontSize: 28, color: 'white' }} />
+              <ArrowForwardIcon sx={{ fontSize: 28, color: 'white' }} />
             </Box>
           </MotionBox>
         </Grid>
@@ -225,7 +227,7 @@ export default function Solution() {
                         flexShrink: 0,
                       }}
                     >
-                      <Check sx={{ fontSize: 14, color: 'white' }} />
+                      <CheckIcon sx={{ fontSize: 14, color: 'white' }} />
                     </Box>
                     <Typography variant="body2" sx={{ color: 'text.primary' }}>
                       {item}

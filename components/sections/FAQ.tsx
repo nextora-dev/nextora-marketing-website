@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Box, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
-import { Add, Remove } from '@mui/icons-material';
+import { Add as AddIcon, Remove as RemoveIcon } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
@@ -104,9 +104,9 @@ export default function FAQ() {
                     }}
                   >
                     {expanded === `panel${index}` ? (
-                      <Remove sx={{ fontSize: 18, color: 'white' }} />
+                      <RemoveIcon sx={{ fontSize: 18, color: 'white' }} />
                     ) : (
-                      <Add sx={{ fontSize: 18, color: colors.primary.main }} />
+                      <AddIcon sx={{ fontSize: 18, color: colors.primary.main }} />
                     )}
                   </Box>
                 }

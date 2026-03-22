@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Container, Grid, Typography, Stack, IconButton, Divider } from '@mui/material';
-import { LinkedIn, Instagram, Email } from '@mui/icons-material';
+import { LinkedIn, Instagram, Email as EmailIcon } from '@mui/icons-material';
 import { footerLinks } from '@/data/content';
 import Image from "next/image";
 import Link from "next/link";
@@ -231,7 +231,7 @@ export default function Footer() {
             © {new Date().getFullYear()} NextOra - The #1 Campus Platform for IIT Sri Lanka Students. All rights reserved.
           </Typography>
           <Stack direction="row" spacing={1} alignItems="center">
-            <Email sx={{ fontSize: 18, color: 'text.secondary' }} aria-hidden="true" />
+            <EmailIcon sx={{ fontSize: 18, color: 'text.secondary' }} aria-hidden="true" />
             <Typography
               component="a"
               href="mailto:nextora.platform@gmail.com"

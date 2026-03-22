@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
-import { PlayArrow, Rocket } from '@mui/icons-material';
+import { Rocket } from '@mui/icons-material';
 import GradientText from '../ui/GradientText';
 import { alpha } from '@mui/material/styles';
 import { colors, gradients } from '@/theme/colors';
-
 
 // Reduced number of background elements for better performance
 const backgroundElements = Array.from({ length: 8 }, (_, i) => ({
@@ -175,25 +174,6 @@ export default function Hero() {
                   aria-label="Get early access to NextOra campus platform"
                 >
                   Get Early Access
-                </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
-                  startIcon={<PlayArrow />}
-                  sx={{
-                    px: 4,
-                    py: 1.75,
-                    borderColor: alpha(colors.grey[400], 0.5),
-                    color: colors.text.primary,
-                    borderWidth: 2,
-                    '&:hover': {
-                      borderWidth: 2,
-                      borderColor: colors.primary.main,
-                      background: alpha(colors.primary.main, 0.04),
-                    },
-                  }}
-                >
-                  Watch Demo
                 </Button>
               </Stack>
             </Box>

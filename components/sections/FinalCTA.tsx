@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Box, Grid, Typography, TextField, Button, InputAdornment } from '@mui/material';
-import { Email } from '@mui/icons-material';
+import { Email as EmailIcon } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { alpha } from '@mui/material/styles';
 import SectionWrapper from '../ui/SectionWrapper';
@@ -132,7 +132,7 @@ export default function FinalCTA() {
                       input: {
                         startAdornment: (
                           <InputAdornment position="start">
-                            <Email sx={{ color: colors.grey[400] }} />
+                            <EmailIcon sx={{ color: colors.grey[400] }} />
                           </InputAdornment>
                         ),
                       },
